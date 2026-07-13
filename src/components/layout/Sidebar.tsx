@@ -57,7 +57,7 @@ export const Sidebar = () => {
           </CardTitle>
         </CardHeader>
         <CardContent className="p-3">
-          <ScrollArea className="h-[500px]">
+          <ScrollArea className="h-[420px] lg:h-[500px]">
             <div className="space-y-3">
               {announcements.map((announcement) => (
                 <div

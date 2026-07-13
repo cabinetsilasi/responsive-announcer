@@ -47,7 +47,7 @@ const announcements: Announcement[] = [
 
 export const Sidebar = () => {
   return (
-    <aside className="w-full lg:w-80 shrink-0 space-y-6 animate-slide-in-right">
+    <aside className="w-full lg:w-80 shrink-0 space-y-6">
       {/* Announcements Card */}
       <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-3xl overflow-hidden">
         <CardHeader className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-t-3xl">

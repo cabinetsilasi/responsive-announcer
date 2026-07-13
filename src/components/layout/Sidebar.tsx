@@ -49,7 +49,7 @@ export const Sidebar = () => {
   return (
     <aside className="w-full lg:w-80 shrink-0 space-y-6 animate-slide-in-right">
       {/* Announcements Card */}
-      <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+      <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl overflow-hidden">
         <CardHeader className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
           <CardTitle className="flex items-center gap-2 font-heading">
             <Bell className="h-5 w-5" />

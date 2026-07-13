@@ -50,7 +50,7 @@ export const Sidebar = () => {
     <aside className="w-full lg:w-80 shrink-0 space-y-6 animate-slide-in-right">
       {/* Announcements Card */}
       <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-3xl overflow-hidden">
-        <CardHeader className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
+        <CardHeader className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-t-3xl">
           <CardTitle className="flex items-center gap-2 font-heading">
             <Bell className="h-5 w-5" />
             Anunțuri/Noutăți
@@ -99,8 +99,8 @@ export const Sidebar = () => {
       </Card>
 
       {/* Quick Links Card */}
-      <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-        <CardHeader className="bg-gradient-to-r from-accent to-secondary text-white">
+      <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-3xl overflow-hidden">
+        <CardHeader className="bg-gradient-to-r from-accent to-secondary text-white rounded-t-3xl">
           <CardTitle className="flex items-center gap-2 font-heading">
             <FileText className="h-5 w-5" />
             Acces Rapid

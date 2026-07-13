@@ -49,23 +49,23 @@ export const Sidebar = () => {
   return (
     <aside className="w-full lg:w-80 shrink-0 space-y-6 animate-slide-in-right">
       {/* Announcements Card */}
-      <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl overflow-hidden">
+      <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-3xl overflow-hidden">
         <CardHeader className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
           <CardTitle className="flex items-center gap-2 font-heading">
             <Bell className="h-5 w-5" />
             Anunțuri/Noutăți
           </CardTitle>
         </CardHeader>
-        <CardContent className="p-0">
+        <CardContent className="p-3">
           <ScrollArea className="h-[500px]">
-            <div className="divide-y divide-border">
+            <div className="space-y-3">
               {announcements.map((announcement) => (
                 <div
                   key={announcement.id}
-                  className="p-4 hover:bg-muted/50 transition-colors cursor-pointer group"
+                  className="p-4 rounded-2xl bg-gradient-to-br from-muted/80 via-muted to-muted/60 hover:from-primary/10 hover:via-primary/5 hover:to-secondary/10 border border-border/50 hover:border-primary/30 transition-all duration-300 cursor-pointer group shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-2 mb-2">
-                    <User className="h-4 w-4 text-muted-foreground mt-1 shrink-0" />
+                    <User className="h-4 w-4 text-muted-foreground mt-1 shrink-0 group-hover:text-primary transition-colors" />
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1">
                         <span className="text-xs font-medium text-muted-foreground">
@@ -84,7 +84,7 @@ export const Sidebar = () => {
                         </span>
                       </div>
                     </div>
-                  </div>
+                  </>div>
                   <h4 className="font-semibold text-sm mb-1 group-hover:text-primary transition-colors line-clamp-2">
                     {announcement.title}
                   </h4>

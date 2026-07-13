@@ -67,7 +67,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
 
           {/* Sidebar */}
           <aside
-            className={`w-full lg:w-80 shrink-0 space-y-6 animate-slide-in-right fixed lg:static inset-y-0 right-0 z-40 transform transition-transform duration-300 ease-in-out lg:transform-none bg-background lg:bg-transparent p-4 lg:p-0 shadow-2xl lg:shadow-none overflow-y-auto lg:overflow-visible ${
+            className={`w-80 shrink-0 space-y-6 fixed lg:static inset-y-0 right-0 z-40 transform transition-transform duration-300 ease-in-out lg:transform-none bg-background lg:bg-transparent p-4 lg:p-0 shadow-2xl lg:shadow-none overflow-y-auto lg:overflow-visible ${
               sidebarOpen ? "translate-x-0" : "translate-x-full"
             }`}
             aria-label="Panou lateral"

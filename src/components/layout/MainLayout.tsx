@@ -43,7 +43,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
           <Button
             variant="default"
             size="icon"
-            className={`fixed bottom-4 right-4 z-50 rounded-full shadow-xl lg:hidden transition-transform duration-300 ${
+            className={`fixed bottom-4 right-4 z-[60] rounded-full shadow-xl lg:hidden transition-transform duration-300 ${
               sidebarOpen ? "rotate-180" : ""
             }`}
             onClick={() => setSidebarOpen((open) => !open)}

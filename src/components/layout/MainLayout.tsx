@@ -57,19 +57,23 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
           </Button>
 
           {/* Backdrop for mobile sidebar */}
-          {sidebarOpen && (
-            <div
-              className="fixed inset-0 bg-black/30 z-30 lg:hidden"
-              onClick={() => setSidebarOpen(false)}
-              aria-hidden="true"
-            />
-          )}
+          <div
+            className={`fixed inset-0 bg-black/30 z-30 lg:hidden transition-opacity duration-300 ${
+              sidebarOpen
+                ? "opacity-100 pointer-events-auto"
+                : "opacity-0 pointer-events-none"
+            }`}
+            onClick={() => setSidebarOpen(false)}
+            aria-hidden="true"
+          />
 
           {/* Sidebar */}
           <aside
-            className={`w-80 shrink-0 space-y-6 fixed lg:static inset-y-0 right-0 z-40 transform transition-transform duration-300 ease-in-out lg:transform-none bg-background lg:bg-transparent p-4 lg:p-0 shadow-2xl lg:shadow-none overflow-y-auto lg:overflow-visible ${
-              sidebarOpen ? "translate-x-0" : "translate-x-full"
-            }`}
+            className={`w-80 shrink-0 space-y-6 fixed lg:static inset-y-0 right-0 z-50 transform transition-all duration-300 ease-in-out bg-background lg:bg-transparent p-4 lg:p-0 shadow-2xl lg:shadow-none overflow-y-auto lg:overflow-visible ${
+              sidebarOpen
+                ? "translate-x-0 opacity-100 pointer-events-auto"
+                : "translate-x-full opacity-0 pointer-events-none"
+            } lg:translate-x-0 lg:opacity-100 lg:pointer-events-auto`}
             aria-label="Panou lateral"
           >
             <Sidebar />

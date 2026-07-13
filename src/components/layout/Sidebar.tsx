@@ -84,7 +84,7 @@ export const Sidebar = () => {
                         </span>
                       </div>
                     </div>
-                  </>div>
+                  </div>
                   <h4 className="font-semibold text-sm mb-1 group-hover:text-primary transition-colors line-clamp-2">
                     {announcement.title}
                   </h4>

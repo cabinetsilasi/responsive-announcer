@@ -68,7 +68,7 @@ export const Sidebar = () => {
       <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-3xl overflow-hidden">
         <CardHeader
           className={cn(
-            "bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-t-3xl transition-all duration-300",
+            "bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-t-3xl transition-all duration-300 hover:brightness-105",
             isAnnouncementsSectionActive && "ring-2 ring-primary ring-offset-2 ring-offset-background shadow-lg"
           )}
         >
@@ -89,10 +89,10 @@ export const Sidebar = () => {
                     key={announcement.id}
                     to={announcementPath}
                     className={cn(
-                      "block p-4 rounded-2xl border transition-all duration-300 group shadow-sm",
+                      "block p-4 rounded-2xl border transition-all duration-300 group shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                       active
-                        ? "bg-gradient-to-br from-primary/20 via-primary/10 to-secondary/10 border-primary ring-1 ring-primary"
-                        : "bg-gradient-to-br from-muted/80 via-muted to-muted/60 border-border/50 hover:from-primary/10 hover:via-primary/5 hover:to-secondary/10 hover:border-primary/30 hover:shadow-md"
+                        ? "bg-gradient-to-br from-primary/20 via-primary/10 to-secondary/10 border-primary ring-1 ring-primary shadow-md"
+                        : "bg-gradient-to-br from-muted/80 via-muted to-muted/60 border-border/50 hover:border-primary/40 hover:bg-primary/[0.06] hover:shadow-md hover:-translate-y-0.5"
                     )}
                   >
                     <div className="flex items-start gap-2 mb-2">
@@ -132,7 +132,7 @@ export const Sidebar = () => {
 
       {/* Quick Links Card */}
       <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-3xl overflow-hidden">
-        <CardHeader className="bg-gradient-to-r from-accent to-secondary text-white rounded-t-3xl">
+        <CardHeader className="bg-gradient-to-r from-accent to-secondary text-white rounded-t-3xl transition-all duration-300 hover:brightness-105">
           <CardTitle className="flex items-center gap-2 font-heading">
             <FileText className="h-5 w-5" />
             Acces Rapid
@@ -148,16 +148,22 @@ export const Sidebar = () => {
                   key={link.href}
                   to={link.href}
                   className={cn(
-                    "block p-3 rounded-lg transition-all group",
+                    "relative flex items-center gap-2 p-3 rounded-lg transition-all duration-300 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                     active
-                      ? "bg-primary text-primary-foreground shadow-md"
-                      : "bg-muted hover:bg-primary hover:text-primary-foreground"
+                      ? "bg-primary text-primary-foreground shadow-md ring-1 ring-primary/40"
+                      : "bg-muted text-foreground hover:bg-primary/10 hover:text-primary hover:border-primary/30 border border-transparent"
                   )}
                 >
                   <span
                     className={cn(
-                      "font-medium text-sm inline-block transition-transform",
-                      active ? "translate-x-1" : "group-hover:translate-x-1"
+                      "absolute left-0 top-1/2 -translate-y-1/2 h-5 w-1 rounded-full transition-all duration-300",
+                      active ? "bg-primary-foreground opacity-100" : "bg-primary opacity-0 group-hover:opacity-60"
+                    )}
+                  />
+                  <span
+                    className={cn(
+                      "font-medium text-sm inline-block transition-transform duration-300",
+                      active ? "translate-x-2" : "group-hover:translate-x-1"
                     )}
                   >
                     {link.label}

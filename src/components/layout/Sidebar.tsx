@@ -156,8 +156,8 @@ export const Sidebar = () => {
                 >
                   <span
                     className={cn(
-                      "absolute left-0 top-1/2 -translate-y-1/2 h-5 w-1 rounded-full bg-primary transition-all duration-300",
-                      active ? "opacity-100" : "opacity-0 group-hover:opacity-60"
+                      "absolute left-0 top-1/2 -translate-y-1/2 h-5 w-1 rounded-full transition-all duration-300",
+                      active ? "bg-primary-foreground opacity-100" : "bg-primary opacity-0 group-hover:opacity-60"
                     )}
                   />
                   <span

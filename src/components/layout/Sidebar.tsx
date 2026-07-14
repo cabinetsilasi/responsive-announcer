@@ -89,10 +89,10 @@ export const Sidebar = () => {
                     key={announcement.id}
                     to={announcementPath}
                     className={cn(
-                      "block p-4 rounded-2xl border transition-all duration-300 group shadow-sm",
+                      "block p-4 rounded-2xl border transition-all duration-300 group shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                       active
-                        ? "bg-gradient-to-br from-primary/20 via-primary/10 to-secondary/10 border-primary ring-1 ring-primary"
-                        : "bg-gradient-to-br from-muted/80 via-muted to-muted/60 border-border/50 hover:from-primary/10 hover:via-primary/5 hover:to-secondary/10 hover:border-primary/30 hover:shadow-md"
+                        ? "bg-gradient-to-br from-primary/20 via-primary/10 to-secondary/10 border-primary ring-1 ring-primary shadow-md"
+                        : "bg-gradient-to-br from-muted/80 via-muted to-muted/60 border-border/50 hover:border-primary/40 hover:bg-primary/[0.06] hover:shadow-md hover:-translate-y-0.5"
                     )}
                   >
                     <div className="flex items-start gap-2 mb-2">

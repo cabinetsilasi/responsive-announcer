@@ -148,16 +148,22 @@ export const Sidebar = () => {
                   key={link.href}
                   to={link.href}
                   className={cn(
-                    "block p-3 rounded-lg transition-all group",
+                    "relative flex items-center gap-2 p-3 rounded-lg transition-all duration-300 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                     active
-                      ? "bg-primary text-primary-foreground shadow-md"
-                      : "bg-muted hover:bg-primary hover:text-primary-foreground"
+                      ? "bg-primary text-primary-foreground shadow-md ring-1 ring-primary/40"
+                      : "bg-muted text-foreground hover:bg-primary/10 hover:text-primary hover:border-primary/30 border border-transparent"
                   )}
                 >
                   <span
                     className={cn(
-                      "font-medium text-sm inline-block transition-transform",
-                      active ? "translate-x-1" : "group-hover:translate-x-1"
+                      "absolute left-0 top-1/2 -translate-y-1/2 h-5 w-1 rounded-full bg-primary transition-all duration-300",
+                      active ? "opacity-100" : "opacity-0 group-hover:opacity-60"
+                    )}
+                  />
+                  <span
+                    className={cn(
+                      "font-medium text-sm inline-block transition-transform duration-300",
+                      active ? "translate-x-2" : "group-hover:translate-x-1"
                     )}
                   >
                     {link.label}

@@ -68,7 +68,7 @@ export const Sidebar = () => {
       <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-3xl overflow-hidden">
         <CardHeader
           className={cn(
-            "bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-t-3xl transition-all duration-300",
+            "bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-t-3xl transition-all duration-300 hover:brightness-105",
             isAnnouncementsSectionActive && "ring-2 ring-primary ring-offset-2 ring-offset-background shadow-lg"
           )}
         >

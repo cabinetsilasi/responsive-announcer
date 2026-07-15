@@ -51,7 +51,7 @@ export const Header = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center justify-center py-3 gap-1">
+        <nav className="hidden lg:flex items-center justify-center py-3 gap-1 bg-[var(--navbar-gradient)] rounded-2xl my-2 shadow-sm border border-border/30">
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -69,7 +69,7 @@ export const Header = () => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="lg:hidden py-4 animate-fade-in-up">
+          <nav className="lg:hidden py-4 animate-fade-in-up bg-[var(--navbar-gradient)] rounded-2xl my-2 shadow-sm border border-border/30">
             <div className="flex flex-col gap-2">
               {navigation.map((item) => (
                 <Link

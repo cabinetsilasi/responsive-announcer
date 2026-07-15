@@ -28,11 +28,11 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         {/* Logo Section */}
         <div className="flex items-center justify-between py-3 border-b border-border/50">
-          <Link to="/" className="flex items-center transition-transform hover:scale-105">
+          <Link to="/" className="flex items-center w-full transition-transform hover:scale-[1.01]">
             <img 
-              src={logo} 
-              alt="CJRAE-BN Logo" 
-              className="h-16 md:h-20 w-auto object-contain"
+              src={headerGif.url} 
+              alt="CJRAE-BN Header" 
+              className="w-full max-w-full h-auto object-contain rounded-2xl"
             />
           </Link>
           

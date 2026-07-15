@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/header-banner.png";
+import headerGif from "@/assets/header.gif.asset.json";
 
 const navigation = [
   { name: "Acasă", href: "/" },

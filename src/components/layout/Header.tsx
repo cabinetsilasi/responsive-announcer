@@ -29,7 +29,7 @@ export const Header = () => {
         <div className="flex items-center justify-between py-3 border-b border-border/50">
           <Link to="/" className="flex items-center w-full transition-transform hover:scale-[1.01]">
             <img 
-              src={headerGif.url} 
+              src="/header.gif" 
               alt="CJRAE-BN Header" 
               className="w-full max-w-full h-auto object-contain rounded-2xl"
             />

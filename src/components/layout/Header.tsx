@@ -27,10 +27,11 @@ export const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      // Hide when scrolling down past a small threshold; show when scrolling up.
+      // Hide when scrolling down past a small threshold.
+      // Reveal only when the user scrolls back up near the top of the page.
       if (currentScrollY > lastScrollY && currentScrollY > 80) {
         setHidden(true);
-      } else {
+      } else if (currentScrollY < lastScrollY && currentScrollY < 200) {
         setHidden(false);
       }
       setLastScrollY(currentScrollY);

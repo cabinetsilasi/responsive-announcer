@@ -51,11 +51,14 @@ export const Header = () => {
         {/* Logo Section */}
         <div className="flex items-center justify-between py-3 border-b border-border/50">
           <Link to="/" className="flex items-center w-full transition-transform hover:scale-[1.01]">
-            <img 
-              src="/header.gif" 
-              alt="CJRAE-BN Header" 
-              className="w-full max-w-full h-auto object-contain rounded-2xl"
-            />
+            <div className="relative w-full">
+              <img 
+                src="/header.gif" 
+                alt="CJRAE-BN Header" 
+                className="w-full max-w-full h-auto object-contain rounded-2xl"
+              />
+              <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background/60 to-transparent rounded-b-2xl pointer-events-none" />
+            </div>
           </Link>
           
           {/* Mobile menu button */}

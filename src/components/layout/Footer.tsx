@@ -69,7 +69,7 @@ export const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-6 text-center text-sm">
-          <p>© {new Date().getFullYear()} CJRAE-BN. Toate drepturile rezervate.</p>
+          <p>© {new Date().getFullYear()} CJRAE-BN. Toate drepturile rezervate. Creat și administrat de prof. Ioan Ștefan Orban</p>
         </div>
       </div>
     </footer>

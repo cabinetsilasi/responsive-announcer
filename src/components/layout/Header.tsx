@@ -57,7 +57,7 @@ export const Header = () => {
                 alt="CJRAE-BN Header" 
                 className="w-full max-w-full h-auto object-contain rounded-2xl"
               />
-              <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background/60 to-transparent rounded-b-2xl pointer-events-none" />
+              <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background/40 via-background/15 to-transparent rounded-b-2xl pointer-events-none" />
             </div>
           </Link>
           

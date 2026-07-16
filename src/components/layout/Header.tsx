@@ -43,7 +43,7 @@ export const Header = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80 border-b transition-transform duration-300 ease-out ${
+      className={`sticky top-0 z-50 w-full bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80 border-b transition-transform duration-500 ease-out ${
         hidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >

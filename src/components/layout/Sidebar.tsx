@@ -54,9 +54,27 @@ const announcements: Announcement[] = [
 ];
 
 const quickLinks = [
-  { href: "/erasmus", label: "Acreditare Erasmus+" },
-  { href: "/feedback", label: "Chestionar Satisfacție" },
-  { href: "/contact", label: "Contact CJRAE-BN" },
+  {
+    href: "/erasmus",
+    label: "Acreditare Erasmus+",
+    description:
+      "Detalii despre acreditarea Erasmus+ obținută de CJRAE-BN și oportunitățile de mobilitate pentru specialiști.",
+    linkLabel: "Vezi detalii acreditare",
+  },
+  {
+    href: "/feedback",
+    label: "Chestionar Satisfacție",
+    description:
+      "Ajută-ne să îmbunătățim serviciile CJRAE-BN completând un scurt chestionar de satisfacție.",
+    linkLabel: "Completează chestionarul",
+  },
+  {
+    href: "/contact",
+    label: "Contact CJRAE-BN",
+    description:
+      "Găsește datele de contact, adresa și programul instituției pentru a ne scrie sau vizita.",
+    linkLabel: "Deschide pagina de contact",
+  },
 ];
 
 export const Sidebar = () => {

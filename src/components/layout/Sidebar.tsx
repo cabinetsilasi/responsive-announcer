@@ -1,8 +1,14 @@
-import { Calendar, Bell, User, FileText } from "lucide-react";
+import { Calendar, Bell, User, FileText, ExternalLink } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 
 interface Announcement {

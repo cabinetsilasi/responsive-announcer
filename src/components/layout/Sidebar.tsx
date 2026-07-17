@@ -1,8 +1,14 @@
-import { Calendar, Bell, User, FileText } from "lucide-react";
+import { Calendar, Bell, User, FileText, ExternalLink } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 
 interface Announcement {
@@ -48,9 +54,27 @@ const announcements: Announcement[] = [
 ];
 
 const quickLinks = [
-  { href: "/erasmus", label: "Acreditare Erasmus+" },
-  { href: "/feedback", label: "Chestionar Satisfacție" },
-  { href: "/contact", label: "Contact CJRAE-BN" },
+  {
+    href: "/erasmus",
+    label: "Acreditare Erasmus+",
+    description:
+      "Detalii despre acreditarea Erasmus+ obținută de CJRAE-BN și oportunitățile de mobilitate pentru specialiști.",
+    linkLabel: "Vezi detalii acreditare",
+  },
+  {
+    href: "/feedback",
+    label: "Chestionar Satisfacție",
+    description:
+      "Ajută-ne să îmbunătățim serviciile CJRAE-BN completând un scurt chestionar de satisfacție.",
+    linkLabel: "Completează chestionarul",
+  },
+  {
+    href: "/contact",
+    label: "Contact CJRAE-BN",
+    description:
+      "Găsește datele de contact, adresa și programul instituției pentru a ne scrie sau vizita.",
+    linkLabel: "Deschide pagina de contact",
+  },
 ];
 
 export const Sidebar = () => {
@@ -138,40 +162,46 @@ export const Sidebar = () => {
             Acces Rapid
           </CardTitle>
         </CardHeader>
-        <CardContent className="p-4">
-          <div className="space-y-2">
+        <CardContent className="p-3">
+          <Accordion type="single" collapsible className="w-full space-y-2">
             {quickLinks.map((link) => {
               const active = isActive(link.href);
 
               return (
-                <Link
+                <AccordionItem
                   key={link.href}
-                  to={link.href}
+                  value={link.href}
                   className={cn(
-                    "relative flex items-center gap-2 p-3 rounded-lg transition-all duration-300 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                    "border rounded-xl px-3 transition-all duration-300",
                     active
-                      ? "bg-primary text-primary-foreground shadow-md ring-1 ring-primary/40"
-                      : "bg-muted text-foreground hover:bg-primary/10 hover:text-primary hover:border-primary/30 border border-transparent"
+                      ? "border-primary bg-primary/5 ring-1 ring-primary/40"
+                      : "border-border/60 bg-muted hover:border-primary/30 hover:bg-primary/[0.06]"
                   )}
                 >
-                  <span
+                  <AccordionTrigger
                     className={cn(
-                      "absolute left-0 top-1/2 -translate-y-1/2 h-5 w-1 rounded-full transition-all duration-300",
-                      active ? "bg-primary-foreground opacity-100" : "bg-primary opacity-0 group-hover:opacity-60"
-                    )}
-                  />
-                  <span
-                    className={cn(
-                      "font-medium text-sm inline-block transition-transform duration-300",
-                      active ? "translate-x-2" : "group-hover:translate-x-1"
+                      "py-3 hover:no-underline text-left font-medium text-sm transition-colors",
+                      active ? "text-primary" : "text-foreground hover:text-primary"
                     )}
                   >
                     {link.label}
-                  </span>
-                </Link>
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-3">
+                    <p className="text-xs text-muted-foreground mb-3 leading-relaxed">
+                      {link.description}
+                    </p>
+                    <Link
+                      to={link.href}
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
+                    >
+                      {link.linkLabel}
+                      <ExternalLink className="h-3 w-3" />
+                    </Link>
+                  </AccordionContent>
+                </AccordionItem>
               );
             })}
-          </div>
+          </Accordion>
         </CardContent>
       </Card>
 

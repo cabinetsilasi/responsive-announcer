@@ -82,7 +82,7 @@ export const Header = () => {
             <Link
               key={item.name}
               to={item.href}
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
+              className={`px-4 py-2 text-base font-medium rounded-lg transition-all ${
                 isActive(item.href)
                   ? "bg-primary text-primary-foreground shadow-sm"
                   : "text-foreground hover:bg-muted hover:text-primary"
@@ -102,7 +102,7 @@ export const Header = () => {
                   key={item.name}
                   to={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-3 text-sm font-medium rounded-lg transition-all ${
+                  className={`px-4 py-3 text-base font-medium rounded-lg transition-all ${
                     isActive(item.href)
                       ? "bg-primary text-primary-foreground"
                       : "text-foreground hover:bg-muted hover:text-primary"

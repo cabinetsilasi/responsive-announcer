@@ -13,7 +13,7 @@ export const SecondaryNav = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="bg-card rounded-xl shadow-lg p-2 mb-8 animate-fade-in">
+    <nav className="bg-[hsl(var(--navbar-cream))] rounded-xl shadow-lg p-2 mb-8 animate-fade-in border border-primary/10">
       <div className="flex flex-wrap justify-center gap-2">
         {navItems.map((item) => (
           <Link

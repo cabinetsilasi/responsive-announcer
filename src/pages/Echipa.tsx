@@ -286,21 +286,19 @@ export const Echipa = () => {
                 {filteredMembers.map((member) => (
                   <Card
                     key={member.id}
-                    className={`rounded-2xl border transition-all duration-200 hover:shadow-lg flex flex-col ${
-                      member.isDirector
+                    className={`rounded-2xl border transition-all duration-200 hover:shadow-lg flex flex-col ${member.isDirector
                         ? "border-primary/50 bg-gradient-to-br from-primary/5 via-card to-card shadow-md"
                         : "border-border/60 hover:border-primary/40 bg-card"
-                    }`}
+                      }`}
                   >
                     <CardHeader className="p-5 pb-3">
                       <div className="flex items-start justify-between gap-3">
                         <div className="flex items-center gap-3">
                           <div
-                            className={`h-12 w-12 rounded-2xl flex items-center justify-center font-bold text-base font-heading ${
-                              member.isDirector
+                            className={`h-12 w-12 rounded-2xl flex items-center justify-center font-bold text-base font-heading ${member.isDirector
                                 ? "bg-primary text-primary-foreground shadow-md"
                                 : "bg-primary/10 text-primary"
-                            }`}
+                              }`}
                           >
                             {getInitials(member.name)}
                           </div>
@@ -310,7 +308,9 @@ export const Echipa = () => {
                                 {member.name}
                               </h3>
                               {member.isDirector && (
-                                <Award className="h-4 w-4 text-primary shrink-0" title="Director" />
+                                <span title="Director">
+                                  <Award className="h-4 w-4 text-primary shrink-0" />
+                                </span>
                               )}
                             </div>
                             <Badge

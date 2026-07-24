@@ -44,24 +44,23 @@ export const Header = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80 border-b transition-transform duration-700 ease-out ${
-        hidden ? "-translate-y-full" : "translate-y-0"
-      }`}
+      className={`sticky top-0 z-50 w-full bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80 transition-transform duration-700 ease-out ${hidden ? "-translate-y-full" : "translate-y-0"
+        }`}
     >
       <div className="container mx-auto px-4">
         {/* Logo Section */}
-        <div className="flex items-center justify-between py-3 border-b border-border/50">
+        <div className="flex items-center justify-between py-3">
           <Link to="/" className="flex items-center w-full transition-transform hover:scale-[1.01]">
             <div className="relative w-full">
-              <img 
-                src="/header.gif" 
-                alt="CJRAE-BN Header" 
+              <img
+                src="/header.gif"
+                alt="CJRAE-BN Header"
                 className="w-full max-w-full h-auto object-contain rounded-2xl"
               />
               <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background/40 via-background/15 to-transparent rounded-b-2xl pointer-events-none" />
             </div>
           </Link>
-          
+
           {/* Mobile menu button */}
           <Button
             variant="ghost"
@@ -78,16 +77,15 @@ export const Header = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center justify-center py-3 gap-1 bg-[var(--navbar-gradient)] rounded-2xl my-2 shadow-sm border border-border/30">
+        <nav className="hidden lg:flex items-center justify-center py-3 gap-1 bg-[hsl(var(--navbar-cream))] rounded-2xl my-2 shadow-lg border border-primary/10">
           {navigation.map((item) => (
             <Link
               key={item.name}
               to={item.href}
-              className={`px-4 py-2 text-base font-medium rounded-lg transition-all ${
-                isActive(item.href)
+              className={`px-4 py-2 text-base font-medium rounded-lg transition-all ${isActive(item.href)
                   ? "bg-primary text-primary-foreground shadow-sm"
-                  : "text-foreground hover:bg-muted hover:text-primary"
-              }`}
+                  : "text-primary hover:bg-primary/10"
+                }`}
             >
               {item.name}
             </Link>
@@ -96,18 +94,17 @@ export const Header = () => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="lg:hidden py-4 animate-fade-in-up bg-[var(--navbar-gradient)] rounded-2xl my-2 shadow-sm border border-border/30">
+          <nav className="lg:hidden py-4 animate-fade-in-up bg-[hsl(var(--navbar-cream))] rounded-2xl my-2 shadow-lg border border-primary/10">
             <div className="flex flex-col gap-2">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-3 text-base font-medium rounded-lg transition-all ${
-                    isActive(item.href)
+                  className={`px-4 py-3 text-base font-medium rounded-lg transition-all ${isActive(item.href)
                       ? "bg-primary text-primary-foreground"
-                      : "text-foreground hover:bg-muted hover:text-primary"
-                  }`}
+                      : "text-primary hover:bg-primary/10"
+                    }`}
                 >
                   {item.name}
                 </Link>

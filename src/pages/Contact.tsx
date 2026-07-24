@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin, Phone, Mail, Globe, Clock, User, Calendar, Send, CheckCircle2, ShieldAlert } from "lucide-react";
+import { MapPin, Phone, Mail, Globe, Clock, User, Calendar, Send } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -48,7 +48,7 @@ export const Contact = () => {
             </div>
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <Badge variant="secondary" className="bg-white/20 text-white hover:bg-white/30 border-none">
+                <Badge variant="secondary" className="bg-white/20 text-white hover:bg-white/30 border-none text-xs md:text-sm py-1 px-3">
                   Contact & Audiențe
                 </Badge>
               </div>
@@ -65,70 +65,62 @@ export const Contact = () => {
 
       {/* QUICK CONTACT CARDS */}
       <section className="mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 animate-fade-in-up">
-        <Card className="rounded-2xl border-border/60 shadow-sm hover:shadow-md transition-all">
-          <CardContent className="p-5 flex items-start gap-4">
-            <div className="h-12 w-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
-              <MapPin className="h-6 w-6" />
+        <Card className="rounded-2xl border-border/60 shadow-sm hover:shadow-md transition-all h-full">
+          <CardContent className="p-6 flex flex-col items-center text-center justify-center h-full">
+            <div className="h-14 w-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-3 shrink-0">
+              <MapPin className="h-7 w-7" />
             </div>
-            <div>
-              <h3 className="font-heading font-bold text-base text-foreground">Adresă</h3>
-              <p className="text-xs text-muted-foreground mt-1">
-                Bistrița, Str. Axente Sever nr. 1, Sc. C, parter
-              </p>
-            </div>
+            <h3 className="font-heading font-bold text-lg text-foreground mb-1">Adresă</h3>
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+              Bistrița, Str. Axente Sever nr. 1, Sc. C, parter
+            </p>
           </CardContent>
         </Card>
 
-        <Card className="rounded-2xl border-border/60 shadow-sm hover:shadow-md transition-all">
-          <CardContent className="p-5 flex items-start gap-4">
-            <div className="h-12 w-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
-              <Phone className="h-6 w-6" />
+        <Card className="rounded-2xl border-border/60 shadow-sm hover:shadow-md transition-all h-full">
+          <CardContent className="p-6 flex flex-col items-center text-center justify-center h-full">
+            <div className="h-14 w-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-3 shrink-0">
+              <Phone className="h-7 w-7" />
             </div>
-            <div>
-              <h3 className="font-heading font-bold text-base text-foreground">Telefon</h3>
-              <a
-                href="tel:0768114788"
-                className="text-xs font-semibold text-primary hover:underline mt-1 block"
-              >
-                0768 114 788
-              </a>
-            </div>
+            <h3 className="font-heading font-bold text-lg text-foreground mb-1">Telefon</h3>
+            <a
+              href="tel:0768114788"
+              className="text-sm md:text-base font-bold text-primary hover:underline"
+            >
+              0768 114 788
+            </a>
           </CardContent>
         </Card>
 
-        <Card className="rounded-2xl border-border/60 shadow-sm hover:shadow-md transition-all">
-          <CardContent className="p-5 flex items-start gap-4">
-            <div className="h-12 w-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
-              <Mail className="h-6 w-6" />
+        <Card className="rounded-2xl border-border/60 shadow-sm hover:shadow-md transition-all h-full">
+          <CardContent className="p-6 flex flex-col items-center text-center justify-center h-full">
+            <div className="h-14 w-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-3 shrink-0">
+              <Mail className="h-7 w-7" />
             </div>
-            <div>
-              <h3 className="font-heading font-bold text-base text-foreground">E-mail General</h3>
-              <a
-                href="mailto:cjraebn@cjraebistrita.ro"
-                className="text-xs font-semibold text-primary hover:underline mt-1 block break-all"
-              >
-                cjraebn@cjraebistrita.ro
-              </a>
-            </div>
+            <h3 className="font-heading font-bold text-lg text-foreground mb-1">E-mail General</h3>
+            <a
+              href="mailto:cjraebn@cjraebistrita.ro"
+              className="text-sm md:text-base font-bold text-primary hover:underline break-all"
+            >
+              cjraebn@cjraebistrita.ro
+            </a>
           </CardContent>
         </Card>
 
-        <Card className="rounded-2xl border-border/60 shadow-sm hover:shadow-md transition-all">
-          <CardContent className="p-5 flex items-start gap-4">
-            <div className="h-12 w-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
-              <Globe className="h-6 w-6" />
+        <Card className="rounded-2xl border-border/60 shadow-sm hover:shadow-md transition-all h-full">
+          <CardContent className="p-6 flex flex-col items-center text-center justify-center h-full">
+            <div className="h-14 w-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-3 shrink-0">
+              <Globe className="h-7 w-7" />
             </div>
-            <div>
-              <h3 className="font-heading font-bold text-base text-foreground">Website</h3>
-              <a
-                href="https://www.cjraebistrita.ro"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs font-semibold text-primary hover:underline mt-1 block"
-              >
-                www.cjraebistrita.ro
-              </a>
-            </div>
+            <h3 className="font-heading font-bold text-lg text-foreground mb-1">Website</h3>
+            <a
+              href="https://www.cjraebistrita.ro"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm md:text-base font-bold text-primary hover:underline"
+            >
+              www.cjraebistrita.ro
+            </a>
           </CardContent>
         </Card>
       </section>
@@ -142,7 +134,7 @@ export const Contact = () => {
                 <Clock className="h-6 w-6" />
               </div>
               <div>
-                <Badge variant="outline" className="mb-1 border-primary/30 text-primary">
+                <Badge variant="outline" className="mb-1 border-primary/30 text-primary text-xs md:text-sm py-1 px-3">
                   Orare & Audiențe
                 </Badge>
                 <CardTitle className="text-2xl md:text-3xl font-heading font-bold text-foreground">
@@ -160,20 +152,20 @@ export const Contact = () => {
                 <div>
                   <div className="flex items-center gap-2 mb-3">
                     <User className="h-5 w-5 text-primary shrink-0" />
-                    <h3 className="font-heading font-bold text-base text-foreground">Secretariat CJRAE-BN</h3>
+                    <h3 className="font-heading font-bold text-lg text-foreground">Secretariat CJRAE-BN</h3>
                   </div>
-                  <p className="text-xs font-semibold text-primary mb-1">Pantea Olimpia</p>
-                  <p className="text-xs text-muted-foreground mb-4">
-                    E-mail: <a href="mailto:cjraebn@cjraebistrita.ro" className="text-primary hover:underline">cjraebn@cjraebistrita.ro</a>
+                  <p className="text-sm md:text-base font-bold text-primary mb-1">Pantea Olimpia</p>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    E-mail: <a href="mailto:cjraebn@cjraebistrita.ro" className="text-primary hover:underline font-medium">cjraebn@cjraebistrita.ro</a>
                   </p>
 
-                  <Badge variant="secondary" className="mb-3 text-[11px]">Program cu publicul</Badge>
-                  <ul className="text-xs space-y-1.5 font-medium text-foreground/90">
-                    <li className="flex justify-between py-1 border-b border-border/30"><span>Luni:</span> <span className="font-bold">08:00 – 10:00</span></li>
-                    <li className="flex justify-between py-1 border-b border-border/30"><span>Marți:</span> <span className="font-bold">08:00 – 10:00</span></li>
-                    <li className="flex justify-between py-1 border-b border-border/30"><span>Miercuri:</span> <span className="font-bold">14:00 – 16:00</span></li>
-                    <li className="flex justify-between py-1 border-b border-border/30"><span>Joi:</span> <span className="font-bold">14:00 – 16:00</span></li>
-                    <li className="flex justify-between py-1"><span>Vineri:</span> <span className="font-bold">12:00 – 14:00</span></li>
+                  <Badge variant="secondary" className="mb-3 text-xs md:text-sm py-1 px-3">Program cu publicul</Badge>
+                  <ul className="text-sm space-y-2 font-medium text-foreground/90">
+                    <li className="flex justify-between py-1 border-b border-border/30"><span>Luni:</span> <span className="font-bold text-foreground">08:00 – 10:00</span></li>
+                    <li className="flex justify-between py-1 border-b border-border/30"><span>Marți:</span> <span className="font-bold text-foreground">08:00 – 10:00</span></li>
+                    <li className="flex justify-between py-1 border-b border-border/30"><span>Miercuri:</span> <span className="font-bold text-foreground">14:00 – 16:00</span></li>
+                    <li className="flex justify-between py-1 border-b border-border/30"><span>Joi:</span> <span className="font-bold text-foreground">14:00 – 16:00</span></li>
+                    <li className="flex justify-between py-1"><span>Vineri:</span> <span className="font-bold text-foreground">12:00 – 14:00</span></li>
                   </ul>
                 </div>
               </div>
@@ -183,20 +175,20 @@ export const Contact = () => {
                 <div>
                   <div className="flex items-center gap-2 mb-3">
                     <User className="h-5 w-5 text-primary shrink-0" />
-                    <h3 className="font-heading font-bold text-base text-foreground">Director CJRAE-BN</h3>
+                    <h3 className="font-heading font-bold text-lg text-foreground">Director CJRAE-BN</h3>
                   </div>
-                  <p className="text-xs font-semibold text-primary mb-0.5">prof. Toader Anca-Gabriela</p>
-                  <p className="text-xs text-muted-foreground mb-1">Tel: <a href="tel:0753418083" className="font-semibold text-foreground">0753 418 083</a></p>
-                  <p className="text-xs text-muted-foreground mb-4">
-                    E-mail: <a href="mailto:anca.toader@cjraebistrita.ro" className="text-primary hover:underline">anca.toader@cjraebistrita.ro</a>
+                  <p className="text-sm md:text-base font-bold text-primary mb-1">prof. Toader Anca-Gabriela</p>
+                  <p className="text-sm text-muted-foreground mb-1">Tel: <a href="tel:0753418083" className="font-bold text-foreground hover:text-primary">0753 418 083</a></p>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    E-mail: <a href="mailto:anca.toader@cjraebistrita.ro" className="text-primary hover:underline font-medium">anca.toader@cjraebistrita.ro</a>
                   </p>
 
-                  <Badge variant="default" className="mb-3 text-[11px] bg-primary text-primary-foreground">Program de Audiențe</Badge>
-                  <ul className="text-xs space-y-1.5 font-medium text-foreground/90">
+                  <Badge variant="default" className="mb-3 text-xs md:text-sm py-1 px-3 bg-primary text-primary-foreground">Program de Audiențe</Badge>
+                  <ul className="text-sm space-y-2 font-medium text-foreground/90">
                     <li className="flex justify-between py-1 border-b border-border/30"><span>Luni:</span> <span className="font-bold text-primary">14:00 – 16:00</span></li>
                     <li className="flex justify-between py-1 border-b border-border/30"><span>Marți:</span> <span className="font-bold text-primary">12:00 – 14:00</span></li>
                     <li className="flex justify-between py-1 border-b border-border/30"><span>Miercuri:</span> <span className="font-bold text-primary">10:00 – 12:00</span></li>
-                    <li className="flex justify-between py-1 text-muted-foreground"><span>Joi & Vineri:</span> <span>Pe bază de programare</span></li>
+                    <li className="flex justify-between py-1 text-muted-foreground"><span>Joi & Vineri:</span> <span className="font-medium">Pe bază de programare</span></li>
                   </ul>
                 </div>
               </div>
@@ -206,21 +198,21 @@ export const Contact = () => {
                 <div>
                   <div className="flex items-center gap-2 mb-3">
                     <User className="h-5 w-5 text-primary shrink-0" />
-                    <h3 className="font-heading font-bold text-base text-foreground">Administrator Financiar</h3>
+                    <h3 className="font-heading font-bold text-lg text-foreground">Administrator Financiar</h3>
                   </div>
-                  <p className="text-xs font-semibold text-primary mb-0.5">Vișovan Nina-Irina</p>
-                  <p className="text-xs text-muted-foreground mb-1">Tel: <a href="tel:0785182065" className="font-semibold text-foreground">0785 182 065</a></p>
-                  <p className="text-xs text-muted-foreground mb-4">
-                    E-mail: <a href="mailto:cfcas.cjraebn@gmail.com" className="text-primary hover:underline break-all">cfcas.cjraebn@gmail.com</a>
+                  <p className="text-sm md:text-base font-bold text-primary mb-1">Vișovan Nina-Irina</p>
+                  <p className="text-sm text-muted-foreground mb-1">Tel: <a href="tel:0785182065" className="font-bold text-foreground hover:text-primary">0785 182 065</a></p>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    E-mail: <a href="mailto:cfcas.cjraebn@gmail.com" className="text-primary hover:underline font-medium break-all">cfcas.cjraebn@gmail.com</a>
                   </p>
 
-                  <Badge variant="secondary" className="mb-3 text-[11px]">Program cu publicul</Badge>
-                  <ul className="text-xs space-y-1.5 font-medium text-foreground/90">
-                    <li className="flex justify-between py-1 border-b border-border/30"><span>Luni:</span> <span className="font-bold">08:00 – 10:00</span></li>
-                    <li className="flex justify-between py-1 border-b border-border/30"><span>Marți:</span> <span className="font-bold">08:00 – 10:00</span></li>
-                    <li className="flex justify-between py-1 border-b border-border/30"><span>Miercuri:</span> <span className="font-bold">14:00 – 16:00</span></li>
-                    <li className="flex justify-between py-1 border-b border-border/30"><span>Joi:</span> <span className="font-bold">14:00 – 16:00</span></li>
-                    <li className="flex justify-between py-1"><span>Vineri:</span> <span className="font-bold">12:00 – 14:00</span></li>
+                  <Badge variant="secondary" className="mb-3 text-xs md:text-sm py-1 px-3">Program cu publicul</Badge>
+                  <ul className="text-sm space-y-2 font-medium text-foreground/90">
+                    <li className="flex justify-between py-1 border-b border-border/30"><span>Luni:</span> <span className="font-bold text-foreground">08:00 – 10:00</span></li>
+                    <li className="flex justify-between py-1 border-b border-border/30"><span>Marți:</span> <span className="font-bold text-foreground">08:00 – 10:00</span></li>
+                    <li className="flex justify-between py-1 border-b border-border/30"><span>Miercuri:</span> <span className="font-bold text-foreground">14:00 – 16:00</span></li>
+                    <li className="flex justify-between py-1 border-b border-border/30"><span>Joi:</span> <span className="font-bold text-foreground">14:00 – 16:00</span></li>
+                    <li className="flex justify-between py-1"><span>Vineri:</span> <span className="font-bold text-foreground">12:00 – 14:00</span></li>
                   </ul>
                 </div>
               </div>
@@ -230,18 +222,18 @@ export const Contact = () => {
                 <div>
                   <div className="flex items-center gap-2 mb-3">
                     <User className="h-5 w-5 text-primary shrink-0" />
-                    <h3 className="font-heading font-bold text-base text-foreground">Secretariat CEOSP-BN</h3>
+                    <h3 className="font-heading font-bold text-lg text-foreground">Secretariat CEOSP-BN</h3>
                   </div>
-                  <p className="text-xs font-semibold text-primary mb-0.5">Botiș Ioana</p>
-                  <p className="text-xs text-muted-foreground mb-1">Tel: <a href="tel:0768114788" className="font-semibold text-foreground">0768 114 788</a></p>
-                  <p className="text-xs text-muted-foreground mb-4">
-                    E-mail: <a href="mailto:seospbn@cjraebistrita.ro" className="text-primary hover:underline">seospbn@cjraebistrita.ro</a>
+                  <p className="text-sm md:text-base font-bold text-primary mb-1">Botiș Ioana</p>
+                  <p className="text-sm text-muted-foreground mb-1">Tel: <a href="tel:0768114788" className="font-bold text-foreground hover:text-primary">0768 114 788</a></p>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    E-mail: <a href="mailto:seospbn@cjraebistrita.ro" className="text-primary hover:underline font-medium">seospbn@cjraebistrita.ro</a>
                   </p>
 
-                  <Badge variant="outline" className="mb-3 text-[11px] border-primary/30 text-primary">Preluare dosare & certificate</Badge>
-                  <div className="p-3 rounded-xl bg-muted/40 text-xs">
+                  <Badge variant="outline" className="mb-3 text-xs md:text-sm py-1 px-3 border-primary/30 text-primary">Preluare dosare & certificate</Badge>
+                  <div className="p-3.5 rounded-xl bg-muted/40 text-sm">
                     <p className="font-medium text-foreground">Luni – Joi:</p>
-                    <p className="font-bold text-primary text-sm mt-0.5">08:00 – 13:00</p>
+                    <p className="font-bold text-primary text-base md:text-lg mt-0.5">08:00 – 13:00</p>
                   </div>
                 </div>
               </div>
@@ -251,32 +243,32 @@ export const Contact = () => {
                 <div>
                   <div className="flex items-center gap-2 mb-3">
                     <Calendar className="h-5 w-5 text-primary shrink-0" />
-                    <h3 className="font-heading font-bold text-base text-foreground">Program de Lucru - Personal Didactic Auxiliar</h3>
+                    <h3 className="font-heading font-bold text-lg text-foreground">Program de Lucru - Personal Didactic Auxiliar</h3>
                   </div>
-                  <p className="text-xs text-muted-foreground mb-4">
+                  <p className="text-sm text-muted-foreground mb-4">
                     Programul general de activitate al personalului didactic auxiliar din cadrul instituției.
                   </p>
 
-                  <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 text-xs text-center">
-                    <div className="p-3 rounded-xl bg-muted/40 border border-border/40">
-                      <p className="text-muted-foreground font-medium">Luni</p>
-                      <p className="font-bold text-foreground mt-1">08:00 - 16:30</p>
+                  <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 text-sm text-center">
+                    <div className="p-3.5 rounded-xl bg-muted/40 border border-border/40">
+                      <p className="text-muted-foreground font-medium text-xs sm:text-sm">Luni</p>
+                      <p className="font-bold text-foreground text-sm md:text-base mt-1">08:00 - 16:30</p>
                     </div>
-                    <div className="p-3 rounded-xl bg-muted/40 border border-border/40">
-                      <p className="text-muted-foreground font-medium">Marți</p>
-                      <p className="font-bold text-foreground mt-1">08:00 - 16:30</p>
+                    <div className="p-3.5 rounded-xl bg-muted/40 border border-border/40">
+                      <p className="text-muted-foreground font-medium text-xs sm:text-sm">Marți</p>
+                      <p className="font-bold text-foreground text-sm md:text-base mt-1">08:00 - 16:30</p>
                     </div>
-                    <div className="p-3 rounded-xl bg-muted/40 border border-border/40">
-                      <p className="text-muted-foreground font-medium">Miercuri</p>
-                      <p className="font-bold text-foreground mt-1">08:00 - 16:30</p>
+                    <div className="p-3.5 rounded-xl bg-muted/40 border border-border/40">
+                      <p className="text-muted-foreground font-medium text-xs sm:text-sm">Miercuri</p>
+                      <p className="font-bold text-foreground text-sm md:text-base mt-1">08:00 - 16:30</p>
                     </div>
-                    <div className="p-3 rounded-xl bg-muted/40 border border-border/40">
-                      <p className="text-muted-foreground font-medium">Joi</p>
-                      <p className="font-bold text-foreground mt-1">08:00 - 16:30</p>
+                    <div className="p-3.5 rounded-xl bg-muted/40 border border-border/40">
+                      <p className="text-muted-foreground font-medium text-xs sm:text-sm">Joi</p>
+                      <p className="font-bold text-foreground text-sm md:text-base mt-1">08:00 - 16:30</p>
                     </div>
-                    <div className="p-3 rounded-xl bg-primary/10 border border-primary/20 col-span-2 sm:col-span-1">
-                      <p className="text-primary font-medium">Vineri</p>
-                      <p className="font-bold text-primary mt-1">08:00 - 14:00</p>
+                    <div className="p-3.5 rounded-xl bg-primary/10 border border-primary/20 col-span-2 sm:col-span-1">
+                      <p className="text-primary font-medium text-xs sm:text-sm">Vineri</p>
+                      <p className="font-bold text-primary text-sm md:text-base mt-1">08:00 - 14:00</p>
                     </div>
                   </div>
                 </div>
@@ -293,13 +285,13 @@ export const Contact = () => {
         {/* LEFT COLUMN: FORMULAR CONTACT */}
         <Card className="rounded-3xl border-border/60 shadow-lg bg-card overflow-hidden flex flex-col justify-between">
           <CardHeader className="rounded-t-3xl bg-muted/40 p-6 border-b border-border/40">
-            <Badge variant="outline" className="mb-1 border-primary/30 text-primary w-fit">
+            <Badge variant="outline" className="mb-1 border-primary/30 text-primary text-xs md:text-sm py-1 px-3 w-fit">
               Formular de Suport
             </Badge>
             <CardTitle className="text-xl md:text-2xl font-heading font-bold text-foreground">
               Trimite-ne un mesaj
             </CardTitle>
-            <p className="text-xs text-muted-foreground mt-1">
+            <p className="text-sm text-muted-foreground mt-1">
               Completați formularul de mai jos și echipa noastră vă va răspunde prompt.
             </p>
           </CardHeader>
@@ -307,52 +299,52 @@ export const Contact = () => {
           <CardContent className="p-6 space-y-4 flex-1">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-1.5">
-                <Label htmlFor="name" className="text-xs font-semibold">Nume și Prenume *</Label>
+                <Label htmlFor="name" className="text-sm font-semibold">Nume și Prenume *</Label>
                 <Input
                   id="name"
                   type="text"
                   placeholder="Popescu Ion"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="rounded-xl border-border/60"
+                  className="rounded-xl border-border/60 text-sm md:text-base py-5"
                   required
                 />
               </div>
 
               <div className="space-y-1.5">
-                <Label htmlFor="email" className="text-xs font-semibold">Adresă de E-mail *</Label>
+                <Label htmlFor="email" className="text-sm font-semibold">Adresă de E-mail *</Label>
                 <Input
                   id="email"
                   type="email"
                   placeholder="nume@exemplu.ro"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="rounded-xl border-border/60"
+                  className="rounded-xl border-border/60 text-sm md:text-base py-5"
                   required
                 />
               </div>
 
               <div className="space-y-1.5">
-                <Label htmlFor="subject" className="text-xs font-semibold">Subiect</Label>
+                <Label htmlFor="subject" className="text-sm font-semibold">Subiect</Label>
                 <Input
                   id="subject"
                   type="text"
                   placeholder="Solicitare informații consiliere / CEOSP"
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="rounded-xl border-border/60"
+                  className="rounded-xl border-border/60 text-sm md:text-base py-5"
                 />
               </div>
 
               <div className="space-y-1.5">
-                <Label htmlFor="message" className="text-xs font-semibold">Mesajul dumneavoastră *</Label>
+                <Label htmlFor="message" className="text-sm font-semibold">Mesajul dumneavoastră *</Label>
                 <Textarea
                   id="message"
                   rows={4}
                   placeholder="Scrieți mesajul aici..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="rounded-xl border-border/60 resize-none"
+                  className="rounded-xl border-border/60 text-sm md:text-base resize-none"
                   required
                 />
               </div>
@@ -360,9 +352,9 @@ export const Contact = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full rounded-2xl font-semibold gap-2 shadow-md hover:shadow-lg transition-all"
+                className="w-full rounded-2xl font-semibold text-base py-5 gap-2 shadow-md hover:shadow-lg transition-all"
               >
-                <Send className="h-4 w-4" />
+                <Send className="h-5 w-5" />
                 {isSubmitting ? "Se trimite..." : "Trimite Mesajul"}
               </Button>
             </form>
@@ -372,13 +364,13 @@ export const Contact = () => {
         {/* RIGHT COLUMN: HARTA GOOGLE MAPS */}
         <Card className="rounded-3xl border-border/60 shadow-lg bg-card overflow-hidden flex flex-col justify-between">
           <CardHeader className="rounded-t-3xl bg-muted/40 p-6 border-b border-border/40">
-            <Badge variant="outline" className="mb-1 border-primary/30 text-primary w-fit">
+            <Badge variant="outline" className="mb-1 border-primary/30 text-primary text-xs md:text-sm py-1 px-3 w-fit">
               Harta & Localizare
             </Badge>
             <CardTitle className="text-xl md:text-2xl font-heading font-bold text-foreground">
               Unde ne găsiți?
             </CardTitle>
-            <p className="text-xs text-muted-foreground mt-1">
+            <p className="text-sm md:text-base text-muted-foreground mt-1 font-medium">
               Str. Axente Sever nr. 1, Sc. C, parter, Bistrița, jud. Bistrița-Năsăud
             </p>
           </CardHeader>

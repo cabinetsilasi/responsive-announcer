@@ -147,7 +147,44 @@ export const Contact = () => {
           <CardContent className="p-6 md:p-8 space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-              {/* 1. SECRETARIAT CJRAE-BN */}
+              {/* 1. CEOSP-BN (FIRST & HIGHLIGHTED) */}
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/15 via-card to-accent/15 border-2 border-primary shadow-md hover:shadow-lg flex flex-col justify-between relative overflow-hidden">
+                <div className="absolute -right-12 -top-12 w-32 h-32 bg-primary/10 rounded-full blur-2xl pointer-events-none" />
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <Badge variant="default" className="bg-primary text-primary-foreground text-xs md:text-sm font-semibold px-3 py-1 shadow-sm">
+                      Preluare & Eliberare Dosare
+                    </Badge>
+                  </div>
+
+                  <div className="mb-3">
+                    <h3 className="font-heading font-black text-3xl md:text-4xl text-primary tracking-tight">
+                      CEOSP
+                    </h3>
+                    <p className="text-sm md:text-base font-semibold text-foreground/90 mt-1 leading-snug">
+                      Compartimentul de Evaluare, Orientare Școlară și Profesională
+                    </p>
+                  </div>
+
+                  <div className="mt-4 pt-4 border-t border-primary/20 space-y-1">
+                    <p className="text-sm md:text-base font-bold text-foreground">Secretar: Botiș Ioana</p>
+                    <p className="text-sm text-muted-foreground">
+                      Tel: <a href="tel:0768114788" className="font-bold text-primary hover:underline">0768 114 788</a>
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      E-mail: <a href="mailto:seospbn@cjraebistrita.ro" className="text-primary hover:underline font-medium break-all">seospbn@cjraebistrita.ro</a>
+                    </p>
+                  </div>
+
+                  <div className="mt-4 p-4 rounded-xl bg-background/90 border border-primary/30 shadow-sm">
+                    <p className="font-semibold text-xs md:text-sm text-muted-foreground uppercase tracking-wider">Program preluare dosare & certificate</p>
+                    <p className="text-sm font-medium text-foreground mt-1">Luni – Joi:</p>
+                    <p className="font-extrabold text-primary text-lg md:text-xl">08:00 – 13:00</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2. SECRETARIAT CJRAE-BN */}
               <div className="p-5 rounded-2xl bg-gradient-to-br from-card to-primary/5 border border-border/60 shadow-sm flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-2 mb-3">
@@ -166,29 +203,6 @@ export const Contact = () => {
                     <li className="flex justify-between py-1 border-b border-border/30"><span>Miercuri:</span> <span className="font-bold text-foreground">14:00 – 16:00</span></li>
                     <li className="flex justify-between py-1 border-b border-border/30"><span>Joi:</span> <span className="font-bold text-foreground">14:00 – 16:00</span></li>
                     <li className="flex justify-between py-1"><span>Vineri:</span> <span className="font-bold text-foreground">12:00 – 14:00</span></li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* 2. DIRECTOR CJRAE-BN */}
-              <div className="p-5 rounded-2xl bg-gradient-to-br from-card to-secondary/10 border border-primary/40 shadow-sm flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-2 mb-3">
-                    <User className="h-5 w-5 text-primary shrink-0" />
-                    <h3 className="font-heading font-bold text-lg text-foreground">Director CJRAE-BN</h3>
-                  </div>
-                  <p className="text-sm md:text-base font-bold text-primary mb-1">prof. Toader Anca-Gabriela</p>
-                  <p className="text-sm text-muted-foreground mb-1">Tel: <a href="tel:0753418083" className="font-bold text-foreground hover:text-primary">0753 418 083</a></p>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    E-mail: <a href="mailto:anca.toader@cjraebistrita.ro" className="text-primary hover:underline font-medium">anca.toader@cjraebistrita.ro</a>
-                  </p>
-
-                  <Badge variant="default" className="mb-3 text-xs md:text-sm py-1 px-3 bg-primary text-primary-foreground">Program de Audiențe</Badge>
-                  <ul className="text-sm space-y-2 font-medium text-foreground/90">
-                    <li className="flex justify-between py-1 border-b border-border/30"><span>Luni:</span> <span className="font-bold text-primary">14:00 – 16:00</span></li>
-                    <li className="flex justify-between py-1 border-b border-border/30"><span>Marți:</span> <span className="font-bold text-primary">12:00 – 14:00</span></li>
-                    <li className="flex justify-between py-1 border-b border-border/30"><span>Miercuri:</span> <span className="font-bold text-primary">10:00 – 12:00</span></li>
-                    <li className="flex justify-between py-1 text-muted-foreground"><span>Joi & Vineri:</span> <span className="font-medium">Pe bază de programare</span></li>
                   </ul>
                 </div>
               </div>
@@ -217,28 +231,7 @@ export const Contact = () => {
                 </div>
               </div>
 
-              {/* 4. SECRETAR CEOSP-BN */}
-              <div className="p-5 rounded-2xl bg-card border border-border/60 shadow-sm flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-2 mb-3">
-                    <User className="h-5 w-5 text-primary shrink-0" />
-                    <h3 className="font-heading font-bold text-lg text-foreground">Secretariat CEOSP-BN</h3>
-                  </div>
-                  <p className="text-sm md:text-base font-bold text-primary mb-1">Botiș Ioana</p>
-                  <p className="text-sm text-muted-foreground mb-1">Tel: <a href="tel:0768114788" className="font-bold text-foreground hover:text-primary">0768 114 788</a></p>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    E-mail: <a href="mailto:seospbn@cjraebistrita.ro" className="text-primary hover:underline font-medium">seospbn@cjraebistrita.ro</a>
-                  </p>
-
-                  <Badge variant="outline" className="mb-3 text-xs md:text-sm py-1 px-3 border-primary/30 text-primary">Preluare dosare & certificate</Badge>
-                  <div className="p-3.5 rounded-xl bg-muted/40 text-sm">
-                    <p className="font-medium text-foreground">Luni – Joi:</p>
-                    <p className="font-bold text-primary text-base md:text-lg mt-0.5">08:00 – 13:00</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* 5. PERSONAL DIDACTIC AUXILIAR */}
+              {/* 4. PERSONAL DIDACTIC AUXILIAR */}
               <div className="p-5 rounded-2xl bg-card border border-border/60 shadow-sm flex flex-col justify-between md:col-span-2 lg:col-span-2">
                 <div>
                   <div className="flex items-center gap-2 mb-3">
@@ -271,6 +264,29 @@ export const Contact = () => {
                       <p className="font-bold text-primary text-sm md:text-base mt-1">08:00 - 14:00</p>
                     </div>
                   </div>
+                </div>
+              </div>
+
+              {/* 5. DIRECTOR CJRAE-BN (ULTIMUL CARD) */}
+              <div className="p-5 rounded-2xl bg-gradient-to-br from-card to-secondary/10 border border-primary/40 shadow-sm flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <User className="h-5 w-5 text-primary shrink-0" />
+                    <h3 className="font-heading font-bold text-lg text-foreground">Director CJRAE-BN</h3>
+                  </div>
+                  <p className="text-sm md:text-base font-bold text-primary mb-1">prof. Toader Anca-Gabriela</p>
+                  <p className="text-sm text-muted-foreground mb-1">Tel: <a href="tel:0753418083" className="font-bold text-foreground hover:text-primary">0753 418 083</a></p>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    E-mail: <a href="mailto:anca.toader@cjraebistrita.ro" className="text-primary hover:underline font-medium">anca.toader@cjraebistrita.ro</a>
+                  </p>
+
+                  <Badge variant="default" className="mb-3 text-xs md:text-sm py-1 px-3 bg-primary text-primary-foreground">Program de Audiențe</Badge>
+                  <ul className="text-sm space-y-2 font-medium text-foreground/90">
+                    <li className="flex justify-between py-1 border-b border-border/30"><span>Luni:</span> <span className="font-bold text-primary">14:00 – 16:00</span></li>
+                    <li className="flex justify-between py-1 border-b border-border/30"><span>Marți:</span> <span className="font-bold text-primary">12:00 – 14:00</span></li>
+                    <li className="flex justify-between py-1 border-b border-border/30"><span>Miercuri:</span> <span className="font-bold text-primary">10:00 – 12:00</span></li>
+                    <li className="flex justify-between py-1 text-muted-foreground"><span>Joi & Vineri:</span> <span className="font-medium">Pe bază de programare</span></li>
+                  </ul>
                 </div>
               </div>
 

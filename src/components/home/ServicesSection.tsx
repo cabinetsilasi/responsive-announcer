@@ -5,13 +5,13 @@ const services = [
   {
     icon: GraduationCap,
     title: "CEOSP",
-    description: "Centrul de Educație și Orientare pentru Servicii Psihopedagogice",
+    description: "Compartimentul de Evaluare Orientare Școlară și Profesională",
     color: "text-primary",
   },
   {
     icon: Users,
     title: "CSES",
-    description: "Centrul Școlar pentru Educație Specială",
+    description: "Compartimentul de Servicii Educaționale Specializate",
     color: "text-accent",
   },
   {
@@ -23,7 +23,7 @@ const services = [
   {
     icon: Heart,
     title: "Consiliere și Orientare",
-    description: "Servicii de consiliere psihopedagogică pentru elevi și părinți",
+    description: "Servicii de consiliere psihopedagogică pentru elevi, părinți și părinți și cadre didactice",
     color: "text-accent",
   },
   {
@@ -35,7 +35,7 @@ const services = [
   {
     icon: FileText,
     title: "Prevenire Hărțuire",
-    description: "Programe de prevenire și intervenție în cazuri de hărțuire școlară",
+    description: "Programe de prevenire și intervenție în cazuri de hărțuire la locul de muncă",
     color: "text-accent",
   },
 ];
@@ -46,10 +46,10 @@ export const ServicesSection = () => {
       <h2 className="text-3xl font-heading font-bold mb-8 text-center animate-fade-in">
         Serviciile Noastre
       </h2>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((service, index) => (
-          <Card 
+          <Card
             key={service.title}
             className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in-up"
             style={{ animationDelay: `${index * 0.1}s` }}

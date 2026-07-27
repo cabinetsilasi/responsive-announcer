@@ -20,6 +20,7 @@ interface ElevDoc {
   id: string;
   number: number;
   title: string;
+  description: string;
   icon: React.ElementType;
   previewUrl: string;
   viewUrl: string;
@@ -30,6 +31,7 @@ const docsList: ElevDoc[] = [
     id: "doc1",
     number: 1,
     title: "Ghidul Elevului - Dezvoltare Personală",
+    description: "Ghid practic pentru dezvoltarea abilităților personale, autocunoaștere și încredere în sine.",
     icon: Sparkles,
     previewUrl: "https://drive.google.com/file/d/1JlHqDOjOs7xHrBHQ5CSNxlBVojoeJ4ko/preview",
     viewUrl: "https://drive.google.com/file/d/1JlHqDOjOs7xHrBHQ5CSNxlBVojoeJ4ko/view?usp=sharing",
@@ -38,6 +40,7 @@ const docsList: ElevDoc[] = [
     id: "doc2",
     number: 2,
     title: "Autocunoaștere și Autoevaluare",
+    description: "Fișe de lucru și exerciții pentru identificarea calităților, valorilor și punctelor forte.",
     icon: Brain,
     previewUrl: "https://drive.google.com/file/d/1d9jSsg7-uhYrdRsx1qtZqhXbjXDRAZbO/preview",
     viewUrl: "https://drive.google.com/file/d/1d9jSsg7-uhYrdRsx1qtZqhXbjXDRAZbO/view?usp=sharing",
@@ -46,6 +49,7 @@ const docsList: ElevDoc[] = [
     id: "doc3",
     number: 3,
     title: "Tehnici și Metode de Învățare Eficientă",
+    description: "Strategii și sfaturi pentru eficientizarea stilului de învățare și organizarea studiului.",
     icon: BookOpen,
     previewUrl: "https://drive.google.com/file/d/1NIHIS8YQTktXjf-KBKPOGCNQqO3HTB6T/preview",
     viewUrl: "https://drive.google.com/file/d/1NIHIS8YQTktXjf-KBKPOGCNQqO3HTB6T/view?usp=sharing",
@@ -54,6 +58,7 @@ const docsList: ElevDoc[] = [
     id: "doc4",
     number: 4,
     title: "Gestionarea Emoțiilor și a Stresului Școlar",
+    description: "Metode practice de management al stresului, anxietății de evaluare și reglare emoțională.",
     icon: Heart,
     previewUrl: "https://drive.google.com/file/d/1kUb8wqmtydZpyiorkv8LpTKllC1BDaay/preview",
     viewUrl: "https://drive.google.com/file/d/1kUb8wqmtydZpyiorkv8LpTKllC1BDaay/view?usp=sharing",
@@ -62,6 +67,7 @@ const docsList: ElevDoc[] = [
     id: "doc5",
     number: 5,
     title: "Orientarea în Carieră și Decizii Școlare",
+    description: "Recomandări și chestionare pentru alegerea parcursului școlar și profesional.",
     icon: Compass,
     previewUrl: "https://drive.google.com/file/d/12pIVc3ZmOOfmBSfbdE2HsAHvM0pRlgTr/preview",
     viewUrl: "https://drive.google.com/file/d/12pIVc3ZmOOfmBSfbdE2HsAHvM0pRlgTr/view?usp=sharing",
@@ -70,6 +76,7 @@ const docsList: ElevDoc[] = [
     id: "doc6",
     number: 6,
     title: "Comunicare Asertivă și Relații Pozitive",
+    description: "Sfaturi pentru îmbunătățirea abilităților de comunicare, empatie și soluționarea conflictelor.",
     icon: Users,
     previewUrl: "https://drive.google.com/file/d/1g6McPJUu3Kn6IeOIAc9wFnx28JDoOmRy/preview",
     viewUrl: "https://drive.google.com/file/d/1g6McPJUu3Kn6IeOIAc9wFnx28JDoOmRy/view?usp=sharing",
@@ -78,6 +85,7 @@ const docsList: ElevDoc[] = [
     id: "doc7",
     number: 7,
     title: "Sfaturi Utile și Ghid de Suport",
+    description: "Materiale suport și recomandări utile pentru o viață școlară echilibrată.",
     icon: Smile,
     previewUrl: "https://drive.google.com/file/d/1-BoMChUoOhLq7wbDT97yqYjs76fDYPJi/preview",
     viewUrl: "https://drive.google.com/file/d/1-BoMChUoOhLq7wbDT97yqYjs76fDYPJi/view?usp=sharing",
@@ -154,6 +162,9 @@ export const ResurseElevi = () => {
                           <CardTitle className="text-xl md:text-2xl font-heading font-bold text-foreground">
                             {doc.title}
                           </CardTitle>
+                          <CardDescription className="text-muted-foreground text-sm mt-0.5">
+                            {doc.description}
+                          </CardDescription>
                         </div>
                       </div>
 
@@ -164,19 +175,26 @@ export const ResurseElevi = () => {
                       >
                         <a href={doc.viewUrl} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="h-4 w-4 mr-2" />
-                          Deschide în Tab Nou
+                          Deschide „{doc.title}”
                         </a>
                       </Button>
                     </div>
                   </CardHeader>
-                  <CardContent className="p-2 sm:p-4 md:p-6">
-                    <div className="w-full h-[650px] md:h-[800px] rounded-2xl overflow-hidden border border-border/60 shadow-inner bg-slate-900/5">
-                      <iframe
-                        src={doc.previewUrl}
-                        className="w-full h-full border-0 rounded-2xl"
-                        allow="autoplay"
-                        title={doc.title}
-                      />
+                  <CardContent className="p-6 bg-muted/20">
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-card border border-border/60 shadow-sm">
+                      <div className="flex items-center gap-3">
+                        <FileText className="h-8 w-8 text-primary shrink-0" />
+                        <div>
+                          <h4 className="font-heading font-semibold text-foreground">{doc.title}</h4>
+                          <p className="text-xs text-muted-foreground">{doc.description}</p>
+                        </div>
+                      </div>
+                      <Button asChild variant="default" className="rounded-xl font-semibold gap-2 shrink-0">
+                        <a href={doc.viewUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" />
+                          Deschide „{doc.title}”
+                        </a>
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>

@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 export const ConsEdu = () => {
   const doc1PreviewUrl = "https://drive.google.com/file/d/1mbn-F5c2xmsF-_F8-dHkvV-Ke1cc-AI7/preview";
   const doc1ViewUrl = "https://drive.google.com/file/d/1mbn-F5c2xmsF-_F8-dHkvV-Ke1cc-AI7/view";
-  
+
   const doc2PreviewUrl = "https://drive.google.com/file/d/19boHuGfgouBisKszIwUObR1yAyHKvTvE/preview";
   const doc2ViewUrl = "https://drive.google.com/file/d/19boHuGfgouBisKszIwUObR1yAyHKvTvE/view";
 
@@ -204,10 +204,10 @@ export const ConsEdu = () => {
                 </div>
                 <div>
                   <Badge variant="outline" className="mb-1 border-primary/30 text-primary">
-                    Documentație ConsEDU - Partea I
+                    Documentație ConsEDU - Afiș
                   </Badge>
                   <CardTitle className="text-xl md:text-2xl font-heading font-bold text-foreground">
-                    Ghid Metodologic & Prezentare
+                    Afișul Oficial al Proiectului ConsEDU Bistrița-Năsăud
                   </CardTitle>
                 </div>
               </div>
@@ -220,20 +220,27 @@ export const ConsEdu = () => {
               >
                 <a href={doc1ViewUrl} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="h-3.5 w-3.5 text-primary" />
-                  Deschide în tab nou
+                  Deschide „Afiș ConsEDU BN”
                 </a>
               </Button>
             </div>
           </CardHeader>
 
-          <CardContent className="p-4 md:p-6">
-            <div className="relative w-full rounded-2xl overflow-hidden border border-border/60 shadow-inner bg-muted/20">
-              <iframe
-                src={doc1PreviewUrl}
-                title="ConsEDU Document 1 Preview"
-                className="w-full h-[450px] md:h-[550px] border-0 rounded-2xl"
-                allow="autoplay"
-              />
+          <CardContent className="p-6 bg-muted/20">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-card border border-border/60 shadow-sm">
+              <div className="flex items-center gap-3">
+                <FileText className="h-8 w-8 text-primary shrink-0" />
+                <div>
+                  <h4 className="font-heading font-semibold text-foreground">Afișul Oficial al Proiectului ConsEDU Bistrița-Năsăud</h4>
+                  <p className="text-xs text-muted-foreground">Document disponibil pe Google Drive</p>
+                </div>
+              </div>
+              <Button asChild variant="default" className="rounded-xl font-semibold gap-2 shrink-0">
+                <a href={doc1ViewUrl} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-4 w-4" />
+                  Deschide „Afiș ConsEDU BN”
+                </a>
+              </Button>
             </div>
           </CardContent>
         </Card>
@@ -248,10 +255,10 @@ export const ConsEdu = () => {
                 </div>
                 <div>
                   <Badge variant="outline" className="mb-1 border-primary/30 text-primary">
-                    Documentație ConsEDU - Partea II
+                    Documentație ConsEDU - Anunț
                   </Badge>
                   <CardTitle className="text-xl md:text-2xl font-heading font-bold text-foreground">
-                    Plan de Acțiune & Servicii Integrat
+                    Anunțul Oficial de Lansare a Proiectului ConsEDU
                   </CardTitle>
                 </div>
               </div>
@@ -264,20 +271,27 @@ export const ConsEdu = () => {
               >
                 <a href={doc2ViewUrl} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="h-3.5 w-3.5 text-primary" />
-                  Deschide în tab nou
+                  Deschide „Anunț ConsEDU BN”
                 </a>
               </Button>
             </div>
           </CardHeader>
 
-          <CardContent className="p-4 md:p-6">
-            <div className="relative w-full rounded-2xl overflow-hidden border border-border/60 shadow-inner bg-muted/20">
-              <iframe
-                src={doc2PreviewUrl}
-                title="ConsEDU Document 2 Preview"
-                className="w-full h-[450px] md:h-[550px] border-0 rounded-2xl"
-                allow="autoplay"
-              />
+          <CardContent className="p-6 bg-muted/20">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-card border border-border/60 shadow-sm">
+              <div className="flex items-center gap-3">
+                <FileText className="h-8 w-8 text-primary shrink-0" />
+                <div>
+                  <h4 className="font-heading font-semibold text-foreground">Anunțul Oficial de Lansare a Proiectului ConsEDU</h4>
+                  <p className="text-xs text-muted-foreground">Document disponibil pe Google Drive</p>
+                </div>
+              </div>
+              <Button asChild variant="default" className="rounded-xl font-semibold gap-2 shrink-0">
+                <a href={doc2ViewUrl} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-4 w-4" />
+                  Deschide „Anunț ConsEDU BN”
+                </a>
+              </Button>
             </div>
           </CardContent>
         </Card>

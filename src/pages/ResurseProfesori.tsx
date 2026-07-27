@@ -101,19 +101,26 @@ export const ResurseProfesori = () => {
                   >
                     <a href={doc1ViewUrl} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="h-4 w-4 mr-2" />
-                      Deschide în Tab Nou
+                      Deschide „Ghidul Cadrelor Didactice”
                     </a>
                   </Button>
                 </div>
               </CardHeader>
-              <CardContent className="p-2 sm:p-4 md:p-6">
-                <div className="w-full h-[650px] md:h-[800px] rounded-2xl overflow-hidden border border-border/60 shadow-inner bg-slate-900/5">
-                  <iframe
-                    src={doc1PreviewUrl}
-                    className="w-full h-full border-0 rounded-2xl"
-                    allow="autoplay"
-                    title="Ghidul Cadrelor Didactice"
-                  />
+              <CardContent className="p-6 bg-muted/20">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-card border border-border/60 shadow-sm">
+                  <div className="flex items-center gap-3">
+                    <FileText className="h-8 w-8 text-primary shrink-0" />
+                    <div>
+                      <h4 className="font-heading font-semibold text-foreground">Ghidul Cadrelor Didactice</h4>
+                      <p className="text-xs text-muted-foreground">Document Metodic #1 pe Google Drive</p>
+                    </div>
+                  </div>
+                  <Button asChild variant="default" className="rounded-xl font-semibold gap-2 shrink-0">
+                    <a href={doc1ViewUrl} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-4 w-4" />
+                      Deschide „Ghidul Cadrelor Didactice”
+                    </a>
+                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -145,19 +152,26 @@ export const ResurseProfesori = () => {
                   >
                     <a href={doc2ViewUrl} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="h-4 w-4 mr-2" />
-                      Deschide în Tab Nou
+                      Deschide „Materiale Consiliere & Orientare”
                     </a>
                   </Button>
                 </div>
               </CardHeader>
-              <CardContent className="p-2 sm:p-4 md:p-6">
-                <div className="w-full h-[650px] md:h-[800px] rounded-2xl overflow-hidden border border-border/60 shadow-inner bg-slate-900/5">
-                  <iframe
-                    src={doc2PreviewUrl}
-                    className="w-full h-full border-0 rounded-2xl"
-                    allow="autoplay"
-                    title="Materiale de Consiliere si Orientare"
-                  />
+              <CardContent className="p-6 bg-muted/20">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-card border border-border/60 shadow-sm">
+                  <div className="flex items-center gap-3">
+                    <FileText className="h-8 w-8 text-primary shrink-0" />
+                    <div>
+                      <h4 className="font-heading font-semibold text-foreground">Materiale de Consiliere și Orientare</h4>
+                      <p className="text-xs text-muted-foreground">Document Metodic #2 pe Google Drive</p>
+                    </div>
+                  </div>
+                  <Button asChild variant="default" className="rounded-xl font-semibold gap-2 shrink-0">
+                    <a href={doc2ViewUrl} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-4 w-4" />
+                      Deschide „Materiale Consiliere & Orientare”
+                    </a>
+                  </Button>
                 </div>
               </CardContent>
             </Card>

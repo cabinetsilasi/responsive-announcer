@@ -1,11 +1,11 @@
-import { 
-  FolderKanban, 
-  Sparkles, 
-  Heart, 
-  Users, 
-  ShieldCheck, 
-  ExternalLink, 
-  FileText, 
+import {
+  FolderKanban,
+  Sparkles,
+  Heart,
+  Users,
+  ShieldCheck,
+  ExternalLink,
+  FileText,
   ArrowRight,
   Facebook
 } from "lucide-react";

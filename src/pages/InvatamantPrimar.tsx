@@ -205,20 +205,27 @@ export const InvatamantPrimar = () => {
               >
                 <a href={comisiiDriveDirectUrl} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="h-4 w-4 text-primary" />
-                  Deschide în tab nou
+                  Deschide „Comisiile de Evaluare Psihosomatică”
                 </a>
               </Button>
             </div>
           </CardHeader>
 
-          <CardContent className="p-4 md:p-6">
-            <div className="relative w-full rounded-2xl overflow-hidden border border-border/60 shadow-inner bg-muted/20 min-h-[500px]">
-              <iframe
-                src={comisiiDrivePreviewUrl}
-                title="Comisiile de Evaluare Preview"
-                className="w-full h-[600px] border-0 rounded-2xl"
-                allow="autoplay"
-              />
+          <CardContent className="p-6 bg-muted/20">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-card border border-border/60 shadow-sm">
+              <div className="flex items-center gap-3">
+                <FileText className="h-8 w-8 text-primary shrink-0" />
+                <div>
+                  <h4 className="font-heading font-semibold text-foreground">Comisiile de Evaluare Psihosomatică</h4>
+                  <p className="text-xs text-muted-foreground">Document oficial disponibil pe Google Drive</p>
+                </div>
+              </div>
+              <Button asChild variant="default" className="rounded-xl font-semibold gap-2 shrink-0">
+                <a href={comisiiDriveDirectUrl} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-4 w-4" />
+                  Deschide „Comisiile de Evaluare”
+                </a>
+              </Button>
             </div>
           </CardContent>
         </Card>

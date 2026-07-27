@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { 
-  Scale, 
-  FileText, 
-  ExternalLink, 
-  Search, 
-  BookOpen, 
-  ShieldCheck, 
-  CheckCircle2, 
-  Sparkles 
+import {
+  Scale,
+  FileText,
+  ExternalLink,
+  Search,
+  BookOpen,
+  ShieldCheck,
+  CheckCircle2,
+  Sparkles
 } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";

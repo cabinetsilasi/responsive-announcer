@@ -1,10 +1,8 @@
 import { 
   HeartHandshake, 
-  Users, 
   FileText, 
   ExternalLink, 
   UserCheck, 
-  Sparkles, 
   BookOpen 
 } from "lucide-react";
 import { MainLayout } from "@/components/layout/MainLayout";
@@ -17,6 +15,7 @@ interface CesDoc {
   id: string;
   number: number;
   title: string;
+  description: string;
   previewUrl: string;
   viewUrl: string;
 }
@@ -25,49 +24,56 @@ const cesDocsList: CesDoc[] = [
   {
     id: "ces1",
     number: 1,
-    title: "Material Sprijin CES - Partea 1",
+    title: "Și copiii cu CES învață acasă în perioada pandemiei",
+    description: "Ghid cu recomandări și activități adaptate pentru învățarea la distanță a copiilor cu CES.",
     previewUrl: "https://drive.google.com/file/d/12jaOi6lRooaB3Ji5miEec_oVjpXJ-VyI/preview",
     viewUrl: "https://drive.google.com/file/d/12jaOi6lRooaB3Ji5miEec_oVjpXJ-VyI/view?usp=sharing",
   },
   {
     id: "ces2",
     number: 2,
-    title: "Material Sprijin CES - Partea 2",
+    title: "Exersarea memoriei copiilor cu CES",
+    description: "Exerciții și jocuri speciale destinate dezvoltării și antrenării memoriei la copii.",
     previewUrl: "https://drive.google.com/file/d/1ogabPXQKzSOvFfN_QUmX0bmDGKjTzMY6/preview",
     viewUrl: "https://drive.google.com/file/d/1ogabPXQKzSOvFfN_QUmX0bmDGKjTzMY6/view?usp=sharing",
   },
   {
     id: "ces3",
     number: 3,
-    title: "Material Sprijin CES - Partea 3",
+    title: "Activități recomandate părinților copiilor cu CES",
+    description: "Set de activități practice și strategii educaționale pentru părinți în lucrul cu copiii.",
     previewUrl: "https://drive.google.com/file/d/1NPLIMjtJ6rZkv1mOtev3ryYPIRIsApYB/preview",
     viewUrl: "https://drive.google.com/file/d/1NPLIMjtJ6rZkv1mOtev3ryYPIRIsApYB/view?usp=sharing",
   },
   {
     id: "ces4",
     number: 4,
-    title: "Material Sprijin CES - Partea 4",
+    title: "Cum pot părinții să alimenteze starea de bine a lor și a copiilor lor",
+    description: "Sfaturi și tehnici de sprijin psiho-emoțional pentru părinți și copii cu cerințe speciale.",
     previewUrl: "https://drive.google.com/file/d/1Yj3MBkNmMOAtvEVzn9c9wUe7bjgtt-gr/preview",
     viewUrl: "https://drive.google.com/file/d/1Yj3MBkNmMOAtvEVzn9c9wUe7bjgtt-gr/view?usp=sharing",
   },
   {
     id: "ces5",
     number: 5,
-    title: "Material Sprijin CES - Partea 5",
+    title: "Recomandări pentru părinții copiilor cu CES",
+    description: "Sugestii și orientări metodice privind dezvoltarea continuă și sprijinul la domiciliu.",
     previewUrl: "https://drive.google.com/file/d/1gmkf-7FqfONYvQskq7RUKY5PEd-q_Lqu/preview",
     viewUrl: "https://drive.google.com/file/d/1gmkf-7FqfONYvQskq7RUKY5PEd-q_Lqu/view?usp=sharing",
   },
   {
     id: "ces6",
     number: 6,
-    title: "Material Sprijin CES - Partea 6",
+    title: "Activități care pot fi de ajutor în cazul discalculiei",
+    description: "Fișe și exerciții ludice specifice pentru copii care se confruntă cu dificultăți de calcul.",
     previewUrl: "https://drive.google.com/file/d/1voSJzVY-Ds06aBnZTsRmDxMVHeQZ4vJr/preview",
     viewUrl: "https://drive.google.com/file/d/1voSJzVY-Ds06aBnZTsRmDxMVHeQZ4vJr/view?usp=sharing",
   },
   {
     id: "ces7",
     number: 7,
-    title: "Material Sprijin CES - Partea 7",
+    title: "Copii în mișcare - Activități senzoriale și motrice",
+    description: "Jocuri și exerciții pentru stimularea psihomotricității, coordonării și integrării senzoriale.",
     previewUrl: "https://drive.google.com/file/d/1XVnmIeSQMCsUBaNXU-eO5rNUK_oyYhyo/preview",
     viewUrl: "https://drive.google.com/file/d/1XVnmIeSQMCsUBaNXU-eO5rNUK_oyYhyo/view?usp=sharing",
   },
@@ -167,6 +173,9 @@ export const ResurseEleviCes = () => {
                         <CardTitle className="text-xl md:text-2xl font-heading font-bold text-foreground">
                           {doc.title}
                         </CardTitle>
+                        <CardDescription className="text-muted-foreground text-sm mt-0.5">
+                          {doc.description}
+                        </CardDescription>
                       </div>
                     </div>
 
@@ -177,19 +186,26 @@ export const ResurseEleviCes = () => {
                     >
                       <a href={doc.viewUrl} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-4 w-4 mr-2" />
-                        Deschide în Tab Nou
+                        Deschide „{doc.title}”
                       </a>
                     </Button>
                   </div>
                 </CardHeader>
-                <CardContent className="p-2 sm:p-4 md:p-6">
-                  <div className="w-full h-[650px] md:h-[800px] rounded-2xl overflow-hidden border border-border/60 shadow-inner bg-slate-900/5">
-                    <iframe
-                      src={doc.previewUrl}
-                      className="w-full h-full border-0 rounded-2xl"
-                      allow="autoplay"
-                      title={doc.title}
-                    />
+                <CardContent className="p-6 bg-muted/20">
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-card border border-border/60 shadow-sm">
+                    <div className="flex items-center gap-3">
+                      <FileText className="h-8 w-8 text-primary shrink-0" />
+                      <div>
+                        <h4 className="font-heading font-semibold text-foreground">{doc.title}</h4>
+                        <p className="text-xs text-muted-foreground">{doc.description}</p>
+                      </div>
+                    </div>
+                    <Button asChild variant="default" className="rounded-xl font-semibold gap-2 shrink-0">
+                      <a href={doc.viewUrl} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4" />
+                        Deschide „{doc.title}”
+                      </a>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>

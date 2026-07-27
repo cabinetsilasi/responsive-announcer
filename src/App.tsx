@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Documente from "./pages/Documente";
 import Ceosp from "./pages/Ceosp";
+import Cses from "./pages/Cses";
 import Erasmus from "./pages/Erasmus";
 import Viziunea from "./pages/Viziunea";
 import Echipa from "./pages/Echipa";
@@ -47,6 +48,8 @@ const App = () => (
           <Route path="/consedu" element={<ConsEdu />} />
           <Route path="/documente" element={<Documente />} />
           <Route path="/ceosp" element={<Ceosp />} />
+          <Route path="/cses" element={<Cses />} />
+          <Route path="/compartiment-cses" element={<Cses />} />
           <Route path="/revista" element={<Revista />} />
           <Route path="/revista-confident" element={<RevistaConfident />} />
           <Route path="/erasmus" element={<Erasmus />} />

@@ -85,20 +85,27 @@ export const Campanii = () => {
               >
                 <a href={superputeriViewUrl} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="h-4 w-4" />
-                  Deschide Documentul
+                  Deschide „Ghidul Campaniei - Superputerile Caracterului”
                 </a>
               </Button>
             </div>
           </CardHeader>
 
-          <CardContent className="p-4 md:p-6">
-            <div className="relative w-full rounded-2xl overflow-hidden border border-border/60 shadow-inner bg-slate-900/5 min-h-[550px]">
-              <iframe
-                src={superputeriPreviewUrl}
-                title="Construim Superputerile Caracterului Preview"
-                className="w-full h-[650px] border-0 rounded-2xl"
-                allow="autoplay"
-              />
+          <CardContent className="p-6 md:p-8 bg-muted/20">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-6 rounded-2xl bg-card border border-border/60 shadow-sm">
+              <div className="flex items-center gap-3">
+                <FileText className="h-8 w-8 text-primary shrink-0" />
+                <div>
+                  <h4 className="font-heading font-semibold text-foreground">Ghidul Campaniei „Construim Superputerile Caracterului”</h4>
+                  <p className="text-xs text-muted-foreground">Document PDF pe Google Drive</p>
+                </div>
+              </div>
+              <Button asChild variant="default" className="rounded-xl font-semibold gap-2 shrink-0">
+                <a href={superputeriViewUrl} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-4 w-4" />
+                  Deschide „Ghidul Campaniei”
+                </a>
+              </Button>
             </div>
           </CardContent>
         </Card>

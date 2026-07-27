@@ -76,18 +76,25 @@ const Revista = () => {
             <Button variant="outline" size="sm" asChild className="rounded-xl gap-2 text-primary border-primary/30 hover:bg-primary/10 shrink-0">
               <a href={currentIssueDirectUrl} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="h-4 w-4" />
-                Deschide pe ecran complet
+                Deschide „Revista CJRAE-BN”
               </a>
             </Button>
           </CardHeader>
-          <CardContent className="p-4 sm:p-6 bg-muted/20">
-            <div className="relative w-full aspect-[4/3] md:aspect-[16/10] min-h-[450px] md:min-h-[600px] rounded-2xl overflow-hidden border border-border/50 shadow-inner bg-card">
-              <iframe
-                src={currentIssueUrl}
-                className="w-full h-full border-0"
-                allow="autoplay"
-                title="Revista CJRAE-BN"
-              />
+          <CardContent className="p-6 bg-muted/20">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-card border border-border/60 shadow-sm">
+              <div className="flex items-center gap-3">
+                <BookOpen className="h-8 w-8 text-primary shrink-0" />
+                <div>
+                  <h4 className="font-heading font-semibold text-foreground">Revista CJRAE-BN - Ediția Curentă</h4>
+                  <p className="text-xs text-muted-foreground">Lectură completă disponibilă pe Google Drive</p>
+                </div>
+              </div>
+              <Button asChild variant="default" className="rounded-xl font-semibold gap-2 shrink-0">
+                <a href={currentIssueDirectUrl} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-4 w-4" />
+                  Citește „Revista CJRAE-BN (Ediția Curentă)”
+                </a>
+              </Button>
             </div>
           </CardContent>
         </Card>

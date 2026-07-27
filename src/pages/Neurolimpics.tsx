@@ -16,29 +16,29 @@ interface MaterialDoc {
 const materials: MaterialDoc[] = [
   {
     id: "mat1",
-    title: "Material Pregătire Partea I",
-    description: "Regulament și prima parte a suportului de curs / materiale pentru Concursul Neurolimpics.",
+    title: "Preșcolari - Povestea Licuricilor",
+    description: "Material didactic și suport de poveste pentru învățământul preșcolar la Concursul Neurolimpics.",
     previewUrl: "https://drive.google.com/file/d/1Gsdt_RlwD_PcFcFGGwQIVyEQsOKuUSy2/preview",
     viewUrl: "https://drive.google.com/file/d/1Gsdt_RlwD_PcFcFGGwQIVyEQsOKuUSy2/view?usp=sharing",
   },
   {
     id: "mat2",
-    title: "Material Pregătire Partea II",
-    description: "Suport teoretic și aplicații practice pentru pregătirea elevilor la Concursul Neurolimpics.",
+    title: "Prietenii mei diferiți - Ciclul Primar",
+    description: "Ghid teoretic și activități de empatie destinate elevilor din învățământul primar.",
     previewUrl: "https://drive.google.com/file/d/1yn9FcEC8WhHnAdbQzJOcUU52u6SgpOKK/preview",
     viewUrl: "https://drive.google.com/file/d/1yn9FcEC8WhHnAdbQzJOcUU52u6SgpOKK/view?usp=sharing",
   },
   {
     id: "mat3",
-    title: "Material Pregătire Partea III",
-    description: "Fișe de lucru, studii de caz și exemple pentru aprofundare.",
+    title: "Conștientizarea Autismului - Ciclul Gimnazial",
+    description: "Prezentare și suport educațional privind conștientizarea autismului pentru învățământul gimnazial (2 Aprile).",
     previewUrl: "https://drive.google.com/file/d/1m_5ANM8kgBnEtejswQsbyL37JK5xTOqa/preview",
     viewUrl: "https://drive.google.com/file/d/1m_5ANM8kgBnEtejswQsbyL37JK5xTOqa/view?usp=sharing",
   },
   {
     id: "mat4",
-    title: "Material Pregătire Partea IV",
-    description: "Ghid de sinteză și modele de subiecte pentru evaluare.",
+    title: "Conștientizarea Autismului - Ciclul Liceal",
+    description: "Material de prezentare, conștientizare și incluziune destinați elevilor de liceu.",
     previewUrl: "https://drive.google.com/file/d/1F_g0n14HfQSNLfWQC-KmV40V76wi1-Lb/preview",
     viewUrl: "https://drive.google.com/file/d/1F_g0n14HfQSNLfWQC-KmV40V76wi1-Lb/view?usp=sharing",
   },
@@ -122,19 +122,26 @@ export const Neurolimpics = () => {
                     >
                       <a href={mat.viewUrl} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-4 w-4 mr-2" />
-                        Deschide în Tab Nou
+                        Deschide „{mat.title}”
                       </a>
                     </Button>
                   </div>
                 </CardHeader>
-                <CardContent className="p-2 sm:p-4 md:p-6">
-                  <div className="w-full h-[650px] md:h-[800px] rounded-2xl overflow-hidden border border-border/60 shadow-inner bg-slate-900/5">
-                    <iframe
-                      src={mat.previewUrl}
-                      className="w-full h-full border-0 rounded-2xl"
-                      allow="autoplay"
-                      title={mat.title}
-                    />
+                <CardContent className="p-6 bg-muted/20">
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-card border border-border/60 shadow-sm">
+                    <div className="flex items-center gap-3">
+                      <FileText className="h-8 w-8 text-primary shrink-0" />
+                      <div>
+                        <h4 className="font-heading font-semibold text-foreground">{mat.title}</h4>
+                        <p className="text-xs text-muted-foreground">{mat.description}</p>
+                      </div>
+                    </div>
+                    <Button asChild variant="default" className="rounded-xl font-semibold gap-2 shrink-0">
+                      <a href={mat.viewUrl} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4" />
+                        Deschide „{mat.title}”
+                      </a>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>

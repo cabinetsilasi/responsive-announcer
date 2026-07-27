@@ -7,7 +7,8 @@ import {
   Award, 
   CheckCircle2, 
   FileText,
-  ArrowRight
+  ArrowRight,
+  ExternalLink
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { MainLayout } from "@/components/layout/MainLayout";
@@ -225,20 +226,31 @@ export const OfertaEducationala = () => {
                   rel="noopener noreferrer"
                 >
                   <ArrowRight className="h-4 w-4 mr-2" />
-                  Deschide în Tab Nou
+                  Deschide „Broșură Oferta Educațională”
                 </a>
               </Button>
             </div>
           </CardHeader>
 
-          <CardContent className="p-4 md:p-6">
-            <div className="relative w-full rounded-2xl overflow-hidden border border-border/60 shadow-inner bg-slate-900/5 min-h-[550px]">
-              <iframe
-                src="https://drive.google.com/file/d/1L6DYJz1h5dEZji7zBiKIfiY5KwyQ1j_k/preview"
-                title="Broșură Oferta Educațională Preview"
-                className="w-full h-[650px] border-0 rounded-2xl"
-                allow="autoplay"
-              />
+          <CardContent className="p-6 bg-muted/20">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-card border border-border/60 shadow-sm">
+              <div className="flex items-center gap-3">
+                <FileText className="h-8 w-8 text-primary shrink-0" />
+                <div>
+                  <h4 className="font-heading font-semibold text-foreground">Broșură Oferta Educațională CJRAE-BN</h4>
+                  <p className="text-xs text-muted-foreground">Document oficial complet disponibil pe Google Drive</p>
+                </div>
+              </div>
+              <Button asChild variant="default" className="rounded-xl font-semibold gap-2 shrink-0">
+                <a
+                  href="https://drive.google.com/file/d/1L6DYJz1h5dEZji7zBiKIfiY5KwyQ1j_k/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  Deschide „Broșura Educațională”
+                </a>
+              </Button>
             </div>
           </CardContent>
         </Card>

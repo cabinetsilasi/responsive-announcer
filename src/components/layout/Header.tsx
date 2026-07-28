@@ -27,6 +27,12 @@ export const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Do not hide header when mobile menu is open
+      if (mobileMenuOpen) {
+        setHidden(false);
+        return;
+      }
+
       const currentScrollY = window.scrollY;
       // Hide when scrolling down past a small threshold.
       // Reveal only when the user scrolls back up near the top of the page.
@@ -40,12 +46,20 @@ export const Header = () => {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, mobileMenuOpen]);
+
+  const toggleMobileMenu = () => {
+    if (!mobileMenuOpen) {
+      setHidden(false);
+    }
+    setMobileMenuOpen((prev) => !prev);
+  };
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80 transition-transform duration-700 ease-out ${hidden ? "-translate-y-full" : "translate-y-0"
-        }`}
+      className={`sticky top-0 z-50 w-full bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80 transition-transform duration-500 ease-out ${
+        hidden && !mobileMenuOpen ? "-translate-y-full" : "translate-y-0"
+      }`}
     >
       <div className="container mx-auto px-4">
         {/* Logo Section */}
@@ -65,8 +79,9 @@ export const Header = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden ml-2 shrink-0"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
               <X className="h-6 w-6" />
@@ -82,10 +97,11 @@ export const Header = () => {
             <Link
               key={item.name}
               to={item.href}
-              className={`px-4 py-2 text-base font-medium rounded-lg transition-all ${isActive(item.href)
+              className={`px-4 py-2 text-base font-medium rounded-lg transition-all ${
+                isActive(item.href)
                   ? "bg-primary text-primary-foreground shadow-sm"
                   : "text-primary hover:bg-primary/10"
-                }`}
+              }`}
             >
               {item.name}
             </Link>
@@ -94,17 +110,18 @@ export const Header = () => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="lg:hidden py-4 animate-fade-in-up bg-[hsl(var(--navbar-cream))] rounded-2xl my-2 shadow-lg border border-primary/10">
-            <div className="flex flex-col gap-2">
+          <nav className="lg:hidden py-3 px-2 animate-fade-in-up bg-[hsl(var(--navbar-cream))] rounded-2xl my-2 shadow-lg border border-primary/10 max-h-[calc(100vh-140px)] overflow-y-auto">
+            <div className="flex flex-col gap-1">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-3 text-base font-medium rounded-lg transition-all ${isActive(item.href)
+                  className={`px-4 py-3 text-base font-medium rounded-lg transition-all ${
+                    isActive(item.href)
                       ? "bg-primary text-primary-foreground"
                       : "text-primary hover:bg-primary/10"
-                    }`}
+                  }`}
                 >
                   {item.name}
                 </Link>

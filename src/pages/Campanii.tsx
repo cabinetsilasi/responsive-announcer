@@ -137,12 +137,12 @@ export const Campanii = () => {
             <Button
               asChild
               size="lg"
-              className="rounded-2xl shadow-md font-semibold gap-2 shrink-0 bg-primary text-primary-foreground hover:bg-primary/90"
+              className="w-full sm:w-auto h-auto py-3 px-5 rounded-2xl shadow-md font-semibold shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 max-w-full whitespace-normal text-left"
             >
-              <a href={reconectareFolderUrl} target="_blank" rel="noopener noreferrer">
-                <Folder className="h-5 w-5" />
-                Accesează Folderul cu Materiale
-                <ExternalLink className="h-4 w-4 ml-1 opacity-70" />
+              <a href={reconectareFolderUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center sm:justify-start gap-2 w-full">
+                <Folder className="h-5 w-5 shrink-0" />
+                <span className="break-words">Accesează Folderul cu Materiale</span>
+                <ExternalLink className="h-4 w-4 shrink-0 opacity-70" />
               </a>
             </Button>
           </div>

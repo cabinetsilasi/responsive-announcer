@@ -183,9 +183,9 @@ export const InvatamantPrimar = () => {
       {/* COMISIILE DE EVALUARE SECTION */}
       <section className="mb-10 animate-fade-in-up">
         <Card className="rounded-3xl border-border/60 shadow-lg bg-card overflow-hidden">
-          <CardHeader className="rounded-t-3xl bg-muted/40 p-6 md:p-8 border-b border-border/40">
+          <CardHeader className="bg-muted/40 p-6 md:p-8">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div>
+              <div className="min-w-0">
                 <Badge variant="outline" className="mb-1 border-primary/30 text-primary">
                   Documentație & Comisii
                 </Badge>
@@ -200,34 +200,15 @@ export const InvatamantPrimar = () => {
               <Button
                 asChild
                 variant="outline"
-                size="sm"
-                className="rounded-xl text-xs gap-1.5 border-border/60 self-start sm:self-auto"
+                className="w-full sm:w-auto h-auto py-2.5 px-4 border-primary/30 hover:bg-primary/10 text-primary font-semibold rounded-xl shrink-0 max-w-full whitespace-normal text-left"
               >
-                <a href={comisiiDriveDirectUrl} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4 text-primary" />
-                  Deschide „Comisiile de Evaluare Psihosomatică”
+                <a href={comisiiDriveDirectUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center sm:justify-start gap-2 w-full">
+                  <ExternalLink className="h-4 w-4 shrink-0" />
+                  <span className="break-words">Deschide „Comisiile de Evaluare Psihosomatică”</span>
                 </a>
               </Button>
             </div>
           </CardHeader>
-
-          <CardContent className="p-6 bg-muted/20">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-card border border-border/60 shadow-sm">
-              <div className="flex items-center gap-3">
-                <FileText className="h-8 w-8 text-primary shrink-0" />
-                <div>
-                  <h4 className="font-heading font-semibold text-foreground">Comisiile de Evaluare Psihosomatică</h4>
-                  <p className="text-xs text-muted-foreground">Document oficial disponibil pe Google Drive</p>
-                </div>
-              </div>
-              <Button asChild variant="default" className="rounded-xl font-semibold gap-2 shrink-0">
-                <a href={comisiiDriveDirectUrl} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4" />
-                  Deschide „Comisiile de Evaluare”
-                </a>
-              </Button>
-            </div>
-          </CardContent>
         </Card>
       </section>
     </MainLayout>

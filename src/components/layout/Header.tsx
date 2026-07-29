@@ -97,7 +97,7 @@ export const Header = () => {
             <Link
               key={item.name}
               to={item.href}
-              className={`px-4 py-2 text-base font-medium rounded-lg transition-all ${
+              className={`px-2.5 xl:px-4 py-2 text-sm xl:text-base font-medium rounded-lg transition-all whitespace-nowrap shrink-0 ${
                 isActive(item.href)
                   ? "bg-primary text-primary-foreground shadow-sm"
                   : "text-primary hover:bg-primary/10"

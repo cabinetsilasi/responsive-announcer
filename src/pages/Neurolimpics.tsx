@@ -99,13 +99,13 @@ export const Neurolimpics = () => {
           {materials.map((mat) => (
             <TabsContent key={mat.id} value={mat.id} className="focus-visible:outline-none">
               <Card className="rounded-3xl border-border/60 shadow-lg bg-card overflow-hidden">
-                <CardHeader className="border-b border-border/40 bg-muted/30 p-6 md:p-8">
+                <CardHeader className="bg-muted/30 p-6 md:p-8">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 min-w-0">
                       <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
                         <FileText className="h-5 w-5" />
                       </div>
-                      <div>
+                      <div className="min-w-0">
                         <CardTitle className="text-xl md:text-2xl font-heading font-bold text-foreground">
                           {mat.title}
                         </CardTitle>
@@ -118,32 +118,15 @@ export const Neurolimpics = () => {
                     <Button
                       asChild
                       variant="outline"
-                      className="border-primary/30 hover:bg-primary/10 text-primary font-medium rounded-xl shrink-0"
+                      className="w-full sm:w-auto h-auto py-2.5 px-4 border-primary/30 hover:bg-primary/10 text-primary font-semibold rounded-xl shrink-0 max-w-full whitespace-normal text-left"
                     >
-                      <a href={mat.viewUrl} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        Deschide „{mat.title}”
+                      <a href={mat.viewUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center sm:justify-start gap-2 w-full">
+                        <ExternalLink className="h-4 w-4 shrink-0" />
+                        <span className="break-words">Deschide „{mat.title}”</span>
                       </a>
                     </Button>
                   </div>
                 </CardHeader>
-                <CardContent className="p-6 bg-muted/20">
-                  <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-card border border-border/60 shadow-sm">
-                    <div className="flex items-center gap-3">
-                      <FileText className="h-8 w-8 text-primary shrink-0" />
-                      <div>
-                        <h4 className="font-heading font-semibold text-foreground">{mat.title}</h4>
-                        <p className="text-xs text-muted-foreground">{mat.description}</p>
-                      </div>
-                    </div>
-                    <Button asChild variant="default" className="rounded-xl font-semibold gap-2 shrink-0">
-                      <a href={mat.viewUrl} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4" />
-                        Deschide „{mat.title}”
-                      </a>
-                    </Button>
-                  </div>
-                </CardContent>
               </Card>
             </TabsContent>
           ))}

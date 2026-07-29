@@ -196,13 +196,13 @@ export const ConsEdu = () => {
       <section className="mb-10 space-y-8 animate-fade-in-up">
         {/* DOCUMENT 1 */}
         <Card className="rounded-3xl border-border/60 shadow-lg bg-card overflow-hidden">
-          <CardHeader className="rounded-t-3xl bg-muted/40 p-6 md:p-8 border-b border-border/40">
+          <CardHeader className="bg-muted/40 p-6 md:p-8">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 min-w-0">
                 <div className="h-10 w-10 rounded-xl bg-primary/15 flex items-center justify-center text-primary shrink-0">
                   <FileText className="h-5 w-5" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <Badge variant="outline" className="mb-1 border-primary/30 text-primary">
                     Documentație ConsEDU - Afiș
                   </Badge>
@@ -215,45 +215,26 @@ export const ConsEdu = () => {
               <Button
                 asChild
                 variant="outline"
-                size="sm"
-                className="rounded-xl text-xs gap-1.5 border-border/60 self-start sm:self-auto"
+                className="w-full sm:w-auto h-auto py-2.5 px-4 border-primary/30 hover:bg-primary/10 text-primary font-semibold rounded-xl shrink-0 max-w-full whitespace-normal text-left"
               >
-                <a href={doc1ViewUrl} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-3.5 w-3.5 text-primary" />
-                  Deschide „Afiș ConsEDU BN”
+                <a href={doc1ViewUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center sm:justify-start gap-2 w-full">
+                  <ExternalLink className="h-4 w-4 shrink-0" />
+                  <span className="break-words">Deschide „Afiș ConsEDU BN”</span>
                 </a>
               </Button>
             </div>
           </CardHeader>
-
-          <CardContent className="p-6 bg-muted/20">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-card border border-border/60 shadow-sm">
-              <div className="flex items-center gap-3">
-                <FileText className="h-8 w-8 text-primary shrink-0" />
-                <div>
-                  <h4 className="font-heading font-semibold text-foreground">Afișul Oficial al Proiectului ConsEDU Bistrița-Năsăud</h4>
-                  <p className="text-xs text-muted-foreground">Document disponibil pe Google Drive</p>
-                </div>
-              </div>
-              <Button asChild variant="default" className="rounded-xl font-semibold gap-2 shrink-0">
-                <a href={doc1ViewUrl} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4" />
-                  Deschide „Afiș ConsEDU BN”
-                </a>
-              </Button>
-            </div>
-          </CardContent>
         </Card>
 
         {/* DOCUMENT 2 */}
         <Card className="rounded-3xl border-border/60 shadow-lg bg-card overflow-hidden">
-          <CardHeader className="rounded-t-3xl bg-muted/40 p-6 md:p-8 border-b border-border/40">
+          <CardHeader className="bg-muted/40 p-6 md:p-8">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 min-w-0">
                 <div className="h-10 w-10 rounded-xl bg-primary/15 flex items-center justify-center text-primary shrink-0">
                   <FileText className="h-5 w-5" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <Badge variant="outline" className="mb-1 border-primary/30 text-primary">
                     Documentație ConsEDU - Anunț
                   </Badge>
@@ -266,34 +247,15 @@ export const ConsEdu = () => {
               <Button
                 asChild
                 variant="outline"
-                size="sm"
-                className="rounded-xl text-xs gap-1.5 border-border/60 self-start sm:self-auto"
+                className="w-full sm:w-auto h-auto py-2.5 px-4 border-primary/30 hover:bg-primary/10 text-primary font-semibold rounded-xl shrink-0 max-w-full whitespace-normal text-left"
               >
-                <a href={doc2ViewUrl} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-3.5 w-3.5 text-primary" />
-                  Deschide „Anunț ConsEDU BN”
+                <a href={doc2ViewUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center sm:justify-start gap-2 w-full">
+                  <ExternalLink className="h-4 w-4 shrink-0" />
+                  <span className="break-words">Deschide „Anunț ConsEDU BN”</span>
                 </a>
               </Button>
             </div>
           </CardHeader>
-
-          <CardContent className="p-6 bg-muted/20">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-card border border-border/60 shadow-sm">
-              <div className="flex items-center gap-3">
-                <FileText className="h-8 w-8 text-primary shrink-0" />
-                <div>
-                  <h4 className="font-heading font-semibold text-foreground">Anunțul Oficial de Lansare a Proiectului ConsEDU</h4>
-                  <p className="text-xs text-muted-foreground">Document disponibil pe Google Drive</p>
-                </div>
-              </div>
-              <Button asChild variant="default" className="rounded-xl font-semibold gap-2 shrink-0">
-                <a href={doc2ViewUrl} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4" />
-                  Deschide „Anunț ConsEDU BN”
-                </a>
-              </Button>
-            </div>
-          </CardContent>
         </Card>
       </section>
     </MainLayout>

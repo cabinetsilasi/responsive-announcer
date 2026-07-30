@@ -130,7 +130,7 @@ export const AccessibilityWidget: React.FC = () => {
   return (
     <aside
       aria-label="Meniu accesibilitate"
-      className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[9999] font-sans"
+      className="fixed top-24 right-4 sm:top-6 sm:right-6 z-[9999] font-sans"
     >
       {/* Floating Toggle Button */}
       <button
@@ -163,7 +163,7 @@ export const AccessibilityWidget: React.FC = () => {
           />
 
           <div
-            className="fixed top-20 right-4 sm:right-6 left-4 sm:left-auto sm:w-96 bg-card text-card-foreground border border-border rounded-2xl shadow-2xl z-[9999] overflow-hidden transition-all duration-200 animate-in fade-in slide-in-from-top-4"
+            className="fixed top-40 right-4 sm:right-6 left-4 sm:left-auto sm:w-96 bg-card text-card-foreground border border-border rounded-2xl shadow-2xl z-[9999] overflow-hidden transition-all duration-200 animate-in fade-in slide-in-from-top-4"
             role="dialog"
             aria-label="Opțiuni de accesibilitate"
           >

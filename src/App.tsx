@@ -32,6 +32,8 @@ import Legislatie from "./pages/Legislatie";
 import PrevenireHartuire from "./pages/PrevenireHartuire";
 import NotFound from "./pages/NotFound";
 
+import AccessibilityWidget from "@/components/AccessibilityWidget";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -40,6 +42,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <AccessibilityWidget />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/echipa" element={<Echipa />} />

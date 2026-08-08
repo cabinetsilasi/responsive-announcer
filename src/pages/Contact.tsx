@@ -7,12 +7,24 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
+
+const departments = [
+  { label: "Secretariat CJRAE-BN", email: "cjraebn@cjraebistrita.ro" },
+  { label: "Direcțiune – Toader Anca-Gabriela", email: "anca.toader@cjraebistrita.ro" },
+  { label: "CEOSP – Evaluare și Orientare Școlară", email: "seospbn@cjraebistrita.ro" },
+  { label: "Consiliere școlară și psihologică", email: "consiliere_bn@cjraebistrita.ro" },
+  { label: "Terapie logopedică", email: "armeneanclaudia82@gmail.com" },
+  { label: "Servicii de sprijin", email: "linda.bucila@cjraebistrita.ro" },
+  { label: "Administrator financiar", email: "cfcas.cjraebn@gmail.com" },
+];
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    department: "",
     subject: "",
     message: "",
   });
@@ -24,14 +36,19 @@ export const Contact = () => {
       toast.error("Vă rugăm să completați toate câmpurile obligatorii.");
       return;
     }
+    if (!formData.department) {
+      toast.error("Vă rugăm să alegeți compartimentul căruia vă adresați.");
+      return;
+    }
 
     setIsSubmitting(true);
     setTimeout(() => {
       setIsSubmitting(false);
       toast.success("Mesajul dumneavoastră a fost trimis cu succes! Vă vom răspunde în cel mai scurt timp.");
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({ name: "", email: "", department: "", subject: "", message: "" });
     }, 800);
   };
+
 
   return (
     <MainLayout>
@@ -308,7 +325,11 @@ export const Contact = () => {
               Trimite-ne un mesaj
             </CardTitle>
             <p className="text-sm text-muted-foreground mt-1">
-              Completați formularul de mai jos și echipa noastră vă va răspunde prompt.
+              Completați formularul de mai jos și echipa noastră vă va răspunde prompt.{" "}
+              <span className="font-semibold text-foreground">
+                Vă rugăm să folosiți o adresă de e-mail validă
+              </span>{" "}
+              pentru a putea primi răspunsul nostru.
             </p>
           </CardHeader>
 
@@ -338,6 +359,34 @@ export const Contact = () => {
                   className="rounded-xl border-border/60 text-sm md:text-base py-5"
                   required
                 />
+                <p className="text-xs text-muted-foreground">
+                  Folosiți o adresă de e-mail validă, la care puteți primi răspunsul.
+                </p>
+              </div>
+
+              <div className="space-y-1.5">
+                <Label htmlFor="department" className="text-sm font-semibold">Compartimentul destinatar *</Label>
+                <Select
+                  value={formData.department}
+                  onValueChange={(value) => setFormData({ ...formData, department: value })}
+                >
+                  <SelectTrigger id="department" className="rounded-xl border-border/60 text-sm md:text-base py-5">
+                    <SelectValue placeholder="Alegeți compartimentul căruia vă adresați" />
+                  </SelectTrigger>
+                  <SelectContent className="rounded-xl">
+                    {departments.map((dep) => (
+                      <SelectItem key={dep.email} value={dep.email} className="text-sm">
+                        {dep.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                {formData.department && (
+                  <p className="text-xs text-muted-foreground break-all">
+                    Mesajul va fi direcționat către:{" "}
+                    <span className="font-semibold text-primary">{formData.department}</span>
+                  </p>
+                )}
               </div>
 
               <div className="space-y-1.5">
@@ -351,6 +400,7 @@ export const Contact = () => {
                   className="rounded-xl border-border/60 text-sm md:text-base py-5"
                 />
               </div>
+
 
               <div className="space-y-1.5">
                 <Label htmlFor="message" className="text-sm font-semibold">Mesajul dumneavoastră *</Label>

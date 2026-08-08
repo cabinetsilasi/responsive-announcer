@@ -129,7 +129,7 @@ export const Viziunea = () => {
                   <Users className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-heading font-semibold text-base text-foreground">Resurse Umane Qualificate</h4>
+                  <h4 className="font-heading font-semibold text-base text-foreground">Resurse Umane Calificate</h4>
                   <p className="text-xs text-muted-foreground mt-1">Echipă specializată de profesori consilieri, logopezi și psihopedagogi.</p>
                 </div>
               </div>

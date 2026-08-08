@@ -308,7 +308,11 @@ export const Contact = () => {
               Trimite-ne un mesaj
             </CardTitle>
             <p className="text-sm text-muted-foreground mt-1">
-              Completați formularul de mai jos și echipa noastră vă va răspunde prompt.
+              Completați formularul de mai jos și echipa noastră vă va răspunde prompt.{" "}
+              <span className="font-semibold text-foreground">
+                Vă rugăm să folosiți o adresă de e-mail validă
+              </span>{" "}
+              pentru a putea primi răspunsul nostru.
             </p>
           </CardHeader>
 
@@ -338,6 +342,34 @@ export const Contact = () => {
                   className="rounded-xl border-border/60 text-sm md:text-base py-5"
                   required
                 />
+                <p className="text-xs text-muted-foreground">
+                  Folosiți o adresă de e-mail validă, la care puteți primi răspunsul.
+                </p>
+              </div>
+
+              <div className="space-y-1.5">
+                <Label htmlFor="department" className="text-sm font-semibold">Compartimentul destinatar *</Label>
+                <Select
+                  value={formData.department}
+                  onValueChange={(value) => setFormData({ ...formData, department: value })}
+                >
+                  <SelectTrigger id="department" className="rounded-xl border-border/60 text-sm md:text-base py-5">
+                    <SelectValue placeholder="Alegeți compartimentul căruia vă adresați" />
+                  </SelectTrigger>
+                  <SelectContent className="rounded-xl">
+                    {departments.map((dep) => (
+                      <SelectItem key={dep.email} value={dep.email} className="text-sm">
+                        {dep.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                {formData.department && (
+                  <p className="text-xs text-muted-foreground break-all">
+                    Mesajul va fi direcționat către:{" "}
+                    <span className="font-semibold text-primary">{formData.department}</span>
+                  </p>
+                )}
               </div>
 
               <div className="space-y-1.5">
@@ -351,6 +383,7 @@ export const Contact = () => {
                   className="rounded-xl border-border/60 text-sm md:text-base py-5"
                 />
               </div>
+
 
               <div className="space-y-1.5">
                 <Label htmlFor="message" className="text-sm font-semibold">Mesajul dumneavoastră *</Label>

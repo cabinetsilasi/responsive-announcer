@@ -155,7 +155,7 @@ const sections: Section[] = [
   },
 ];
 
-const ResourceFrame = ({ resource }: { resource: Resource }) => {
+const ResourceFrame = ({ resource, defaultTitle }: { resource: Resource; defaultTitle?: string }) => {
   if (resource.kind === "book") {
     return (
       <a
@@ -175,29 +175,23 @@ const ResourceFrame = ({ resource }: { resource: Resource }) => {
     );
   }
 
+  const titleToShow = resource.title || defaultTitle || "Document Erasmus+";
+
   return (
-    <div className="space-y-2">
-      <div className="relative w-full overflow-hidden rounded-2xl border border-border/60 bg-muted shadow-sm" style={{ aspectRatio: "540 / 380" }}>
-        <iframe
-          src={resource.src}
-          className="absolute inset-0 h-full w-full"
-          allow="autoplay; fullscreen"
-          allowFullScreen
-          loading="lazy"
-          title={resource.title || "Resursă Erasmus+"}
-        />
-      </div>
-      {resource.openUrl && (
-        <a
-          href={resource.openUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"
-        >
-          Deschide în fereastră nouă <ExternalLink className="h-3 w-3" />
-        </a>
-      )}
-    </div>
+    <a
+      href={resource.openUrl || resource.src}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-border/60 bg-gradient-to-br from-primary/5 via-card to-accent/5 p-8 text-center hover:border-primary/50 hover:shadow-lg transition-all duration-300 min-h-[180px]"
+    >
+      <FileText className="h-10 w-10 text-primary group-hover:scale-110 transition-transform" />
+      <span className="font-heading font-semibold text-foreground group-hover:text-primary text-sm">
+        Deschide „{titleToShow}”
+      </span>
+      <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+        Google Drive <ExternalLink className="h-3 w-3" />
+      </span>
+    </a>
   );
 };
 
@@ -264,7 +258,7 @@ const Erasmus = () => {
                     className="rounded-3xl border-border/60 bg-gradient-to-br from-card via-card to-muted/40 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
                   >
                     <CardContent className="p-4">
-                      <ResourceFrame resource={res} />
+                      <ResourceFrame resource={res} defaultTitle={section.title} />
                     </CardContent>
                   </Card>
                 ))}

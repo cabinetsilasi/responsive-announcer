@@ -10,7 +10,8 @@ const navigation = [
   { name: "Documente", href: "/documente" },
   { name: "CEOSP", href: "/ceosp" },
   { name: "CSES", href: "/cses" },
-  { name: "Învățământ Primar 2025", href: "/invatamant-primar" },
+  { name: "Învățământ primar 2026", href: "/invatamant-primar" },
+  { name: "ConsEDU", href: "/consedu" },
   { name: "Revista CJRAE-BN", href: "/revista" },
   { name: "Erasmus+", href: "/erasmus" },
   { name: "Contact", href: "/contact" },
@@ -26,6 +27,12 @@ export const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Do not hide header when mobile menu is open
+      if (mobileMenuOpen) {
+        setHidden(false);
+        return;
+      }
+
       const currentScrollY = window.scrollY;
       // Hide when scrolling down past a small threshold.
       // Reveal only when the user scrolls back up near the top of the page.
@@ -39,34 +46,42 @@ export const Header = () => {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, mobileMenuOpen]);
+
+  const toggleMobileMenu = () => {
+    if (!mobileMenuOpen) {
+      setHidden(false);
+    }
+    setMobileMenuOpen((prev) => !prev);
+  };
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80 border-b transition-transform duration-700 ease-out ${
-        hidden ? "-translate-y-full" : "translate-y-0"
+      className={`sticky top-0 z-50 w-full bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80 transition-transform duration-500 ease-out ${
+        hidden && !mobileMenuOpen ? "-translate-y-full" : "translate-y-0"
       }`}
     >
       <div className="container mx-auto px-4">
         {/* Logo Section */}
-        <div className="flex items-center justify-between py-3 border-b border-border/50">
+        <div className="flex items-center justify-between py-3">
           <Link to="/" className="flex items-center w-full transition-transform hover:scale-[1.01]">
             <div className="relative w-full">
-              <img 
-                src="/header.gif" 
-                alt="CJRAE-BN Header" 
+              <img
+                src="/header.gif"
+                alt="CJRAE-BN Header"
                 className="w-full max-w-full h-auto object-contain rounded-2xl"
               />
               <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background/40 via-background/15 to-transparent rounded-b-2xl pointer-events-none" />
             </div>
           </Link>
-          
+
           {/* Mobile menu button */}
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden ml-2 shrink-0"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
               <X className="h-6 w-6" />
@@ -77,15 +92,15 @@ export const Header = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center justify-center py-3 gap-1 bg-[var(--navbar-gradient)] rounded-2xl my-2 shadow-sm border border-border/30">
+        <nav className="hidden lg:flex items-center justify-center py-3 gap-1 bg-[hsl(var(--navbar-cream))] rounded-2xl my-2 shadow-lg border border-primary/10">
           {navigation.map((item) => (
             <Link
               key={item.name}
               to={item.href}
-              className={`px-4 py-2 text-base font-medium rounded-lg transition-all ${
+              className={`px-2.5 xl:px-4 py-2 text-sm xl:text-base font-medium rounded-lg transition-all whitespace-nowrap shrink-0 ${
                 isActive(item.href)
                   ? "bg-primary text-primary-foreground shadow-sm"
-                  : "text-foreground hover:bg-muted hover:text-primary"
+                  : "text-primary hover:bg-primary/10"
               }`}
             >
               {item.name}
@@ -95,8 +110,8 @@ export const Header = () => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="lg:hidden py-4 animate-fade-in-up bg-[var(--navbar-gradient)] rounded-2xl my-2 shadow-sm border border-border/30">
-            <div className="flex flex-col gap-2">
+          <nav className="lg:hidden py-3 px-2 animate-fade-in-up bg-[hsl(var(--navbar-cream))] rounded-2xl my-2 shadow-lg border border-primary/10 max-h-[calc(100vh-140px)] overflow-y-auto">
+            <div className="flex flex-col gap-1">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
@@ -105,7 +120,7 @@ export const Header = () => {
                   className={`px-4 py-3 text-base font-medium rounded-lg transition-all ${
                     isActive(item.href)
                       ? "bg-primary text-primary-foreground"
-                      : "text-foreground hover:bg-muted hover:text-primary"
+                      : "text-primary hover:bg-primary/10"
                   }`}
                 >
                   {item.name}

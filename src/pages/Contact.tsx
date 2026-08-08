@@ -7,12 +7,24 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
+
+const departments = [
+  { label: "Secretariat CJRAE-BN", email: "cjraebn@cjraebistrita.ro" },
+  { label: "Direcțiune – Toader Anca-Gabriela", email: "anca.toader@cjraebistrita.ro" },
+  { label: "CEOSP – Evaluare și Orientare Școlară", email: "seospbn@cjraebistrita.ro" },
+  { label: "Consiliere școlară și psihologică", email: "consiliere_bn@cjraebistrita.ro" },
+  { label: "Terapie logopedică", email: "armeneanclaudia82@gmail.com" },
+  { label: "Servicii de sprijin", email: "linda.bucila@cjraebistrita.ro" },
+  { label: "Administrator financiar", email: "cfcas.cjraebn@gmail.com" },
+];
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    department: "",
     subject: "",
     message: "",
   });
@@ -24,14 +36,19 @@ export const Contact = () => {
       toast.error("Vă rugăm să completați toate câmpurile obligatorii.");
       return;
     }
+    if (!formData.department) {
+      toast.error("Vă rugăm să alegeți compartimentul căruia vă adresați.");
+      return;
+    }
 
     setIsSubmitting(true);
     setTimeout(() => {
       setIsSubmitting(false);
       toast.success("Mesajul dumneavoastră a fost trimis cu succes! Vă vom răspunde în cel mai scurt timp.");
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({ name: "", email: "", department: "", subject: "", message: "" });
     }, 800);
   };
+
 
   return (
     <MainLayout>

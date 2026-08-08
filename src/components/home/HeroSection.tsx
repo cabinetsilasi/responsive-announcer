@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen, Users, Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const HeroSection = () => {
   return (
@@ -18,11 +19,15 @@ export const HeroSection = () => {
         </p>
         
         <div className="flex flex-wrap gap-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-          <Button size="lg" variant="secondary" className="gap-2 shadow-lg hover:shadow-xl transition-all hover:scale-105">
-            Descoperă Serviciile <ArrowRight className="h-5 w-5" />
+          <Button asChild size="lg" variant="secondary" className="gap-2 shadow-lg hover:shadow-xl transition-all hover:scale-105">
+            <Link to="/servicii">
+              Descoperă Serviciile <ArrowRight className="h-5 w-5" />
+            </Link>
           </Button>
-          <Button size="lg" variant="outline" className="gap-2 bg-white/10 border-white/20 hover:bg-white/20 text-white hover:text-white shadow-lg">
-            Contact <Heart className="h-5 w-5" />
+          <Button asChild size="lg" variant="outline" className="gap-2 bg-white/10 border-white/20 hover:bg-white/20 text-white hover:text-white shadow-lg">
+            <Link to="/contact">
+              Contact <Heart className="h-5 w-5" />
+            </Link>
           </Button>
         </div>
       </div>
